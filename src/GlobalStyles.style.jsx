@@ -21,6 +21,10 @@
 
 import { createGlobalStyle } from "styled-components";
 
+//import bg-image
+import desktopImage from "./assets/image/desktop-bg-image.jpg";
+import mobileImage from "./assets/image/mobile-bg-image.jpg";
+
 export const GlobalStyles = createGlobalStyle`
    *{
         margin: 0px;
@@ -34,6 +38,29 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0px;
         padding: 0px;
         box-sizing: border-box;
+        font-family: Open Sans, sans-serif;
+        background-color: transparent;
+
+    }
+
+    body{
+         background-image: url("${desktopImage}");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          background-position: center;
+          height: 100vh;
+
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    background-image: url("${mobileImage}");
+  }
+
+  /* Smartphone o piccoli Tablet */
+  @media all and (max-width: 480px) {
+    background-image: url("${mobileImage}");
+  }
     }
 
 
