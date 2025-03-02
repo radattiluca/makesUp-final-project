@@ -6,10 +6,8 @@ import { StyledAppContainer } from "./App.style";
 import { StyledNavbar } from "../navbar/Navbar.style.jsx";
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 import { StyledContainerButtonToForm } from "../containerButtonToForm/Container.style";
-import {
-  StyledContainerForm,
-  StyledForm,
-} from "../containerForm/ContainerForm.style";
+import { StyledContainerForm } from "../containerForm/ContainerForm.style";
+import { StyledContainerResults } from "../containerResults/ContainerResults.style.jsx";
 
 function App() {
   return (
@@ -21,6 +19,7 @@ function App() {
           <StyledButtonToForm></StyledButtonToForm>
         </StyledContainerButtonToForm>
         <StyledContainerForm></StyledContainerForm>
+        <StyledContainerResults></StyledContainerResults>
       </StyledAppContainer>
     </>
   );
