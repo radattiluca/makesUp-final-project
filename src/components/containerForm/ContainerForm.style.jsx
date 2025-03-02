@@ -103,3 +103,47 @@ export const StyledContainerImageBg = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const StyledContainaerCounter = styled.div`
+  width: 40%;
+  height: 28px;
+  background-color: rgb(43, 83, 83, 0.9);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(237, 236, 237);
+  align-items: center;
+  justify-content: space-around;
+  z-index: 2;
+  flex-wrap: nowrap;
+  padding: 0 5px 0 5px;
+
+  & span {
+    padding: 0 15px 0 15px;
+    border-right: 1px solid rgb(237, 236, 237, 0.7);
+    border-left: 1px solid rgb(237, 236, 237, 0.7);
+  }
+`;
+export const StyledButtonCounter = styled.div`
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 0 5px 10px;
+  color: #edeced;
+  font-family: Open Sans, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  padding: 4px;
+`;
+
+export const StyledLabelPassengers = styled.div`
+  width: 100%;
+  margin: 10px auto 10px 5px;
+
+  & p {
+    color: #6d8654;
+    font-weight: 700;
+  }
+`;

@@ -1,82 +1,82 @@
 [
   {
     "id": 1,
-    "modello": "Airbus A380-800",
-    "posti": 853
+    "model": "Airbus A380-800",
+    "seating": 853
   },
   {
     "id": 2,
-    "modello": "Boeing 747-8",
-    "posti": 700
+    "model": "Boeing 747-8",
+    "seating": 700
   },
   {
     "id": 3,
-    "modello": "Boeing 747-400",
-    "posti": 624
+    "model": "Boeing 747-400",
+    "seating": 624
   },
   {
     "id": 4,
-    "modello": "Boeing 777-300",
-    "posti": 550
+    "model": "Boeing 777-300",
+    "seating": 550
   },
   {
     "id": 5,
-    "modello": "Airbus A340-600",
-    "posti": 475
+    "model": "Airbus A340-600",
+    "seating": 475
   },
   {
     "id": 6,
-    "modello": "Boeing 777-200",
-    "posti": 440
+    "model": "Boeing 777-200",
+    "seating": 440
   },
   {
     "id": 7,
-    "modello": "Airbus A350-900",
-    "posti": 440
+    "model": "Airbus A350-900",
+    "seating": 440
   },
   {
     "id": 8,
-    "modello": "McDonnell Douglas DC-10",
-    "posti": 380
+    "model": "McDonnell Douglas DC-10",
+    "seating": 380
   },
   {
     "id": 9,
-    "modello": "Airbus A340-500",
-    "posti": 372
+    "model": "Airbus A340-500",
+    "seating": 372
   },
   {
     "id": 10,
-    "modello": "Boeing 787-10",
-    "posti": 330
+    "model": "Boeing 787-10",
+    "seating": 330
   },
   {
     "id": 11,
-    "modello": "Ilyushin 96-400",
-    "posti": 315
+    "model": "Ilyushin 96-400",
+    "seating": 315
   },
   {
     "id": 12,
-    "modello": "Boeing 767-400ER",
-    "posti": 304
+    "model": "Boeing 767-400ER",
+    "seating": 304
   },
   {
     "id": 13,
-    "modello": "Airbus A340-300",
-    "posti": 295
+    "model": "Airbus A340-300",
+    "seating": 295
   },
   {
     "id": 14,
-    "modello": "Boeing 757",
-    "posti": 200
+    "model": "Boeing 757",
+    "seating": 200
   },
   {
     "id": 15,
-    "modello": "Airbus A321",
-    "posti": 220
+    "model": "Airbus A321",
+    "seating": 220
   },
   {
     "id": 16,
-    "modello": "Airbus A220",
-    "posti": 145
+    "model": "Airbus A220",
+    "seating": 145
   }
 ]

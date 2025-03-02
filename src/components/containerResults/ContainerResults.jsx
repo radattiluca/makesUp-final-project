@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+//import store
+import { useSelector } from "react-redux";
+
 //import styles
 import {
   StyledRowOne,
@@ -17,6 +20,7 @@ import {
 } from "./ContainerResults.style";
 
 function ContainerResults({ className, children }) {
+  const count = useSelector((state) => state.counterPassengers.value);
   return (
     <div className={className}>
       {children}
@@ -28,7 +32,7 @@ function ContainerResults({ className, children }) {
           <StyledFakeLabel>Destinazione</StyledFakeLabel>
           <StyledFakeInput>input form destinazione</StyledFakeInput>
           <StyledFakeLabel>Passeggeri</StyledFakeLabel>
-          <StyledFakeInput>passeggeri</StyledFakeInput>
+          <StyledFakeInput>{count}</StyledFakeInput>
         </StyledRowOne>
         <StyledRowTwo>
           <StyledFakeLabel>Aereo</StyledFakeLabel>
