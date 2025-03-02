@@ -16,7 +16,6 @@ import {
   StyledContainerDoublePrintImage,
 } from "./ContainerForm.style";
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
-import { SingleValue } from "react-select/animated";
 
 //esempio di valori
 const partenze = [

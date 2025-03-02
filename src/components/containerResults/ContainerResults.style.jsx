@@ -47,6 +47,13 @@ export const StyledContainerCo2 = styled.div`
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
+
+  & h1 {
+    color: #b9aba3;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
 export const StyledRowButton = styled.div`
   display: flex;

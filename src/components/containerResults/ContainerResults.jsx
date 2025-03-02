@@ -38,6 +38,7 @@ function ContainerResults({ className, children }) {
         </StyledRowTwo>
       </StyledFakeForm>
       <StyledContainerCo2>
+        <h1>La tua impronta</h1>
         <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
         <StyledFakeInput>
           0.100t di Co2
