@@ -11,6 +11,13 @@ import {
 } from "../../redux/slices/couterPassengers.slice";
 import { fetchAirplanes } from "../../redux/slices/airplanes.slice";
 import { fetchAirports } from "../../redux/slices/airports.slice";
+import { fetchFootPrint } from "../../redux/slices/footPrintClientApi.slice";
+import {
+  setOrigin,
+  setDestination,
+  setClass,
+  setAirplane,
+} from "../../redux/slices/flightSelection.slice";
 
 //import styles
 import {
@@ -30,6 +37,8 @@ import {
   StyledLabelPassengers,
 } from "./ContainerForm.style";
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
+
+// import goClimateApi from "../clientApi/ClientApi";
 
 const classe = [
   { value: "economy", label: "Economy" },
@@ -74,6 +83,7 @@ const customStylesInput = {
 };
 
 function ContainerForm({ className, children }) {
+  // andiamo a prendere gli stati con useSelector e utilizziamo dispatch per fare le azioni
   const count = useSelector((state) => state.counterPassengers.value);
   const dispatch = useDispatch();
   const dispatchAirplanes = useDispatch();
@@ -82,6 +92,13 @@ function ContainerForm({ className, children }) {
   const { listAirports, statusAirports, errorAirports } = useSelector(
     (state) => state.airports
   );
+  const dispatchFootPrint = useDispatch();
+  const {
+    selectedOrigin,
+    selectedDestination,
+    selectedClass,
+    selectedAirplane,
+  } = useSelector((state) => state.flightSelection);
 
   useEffect(() => {
     if (status === "idle") {
@@ -95,28 +112,43 @@ function ContainerForm({ className, children }) {
   if (status === "failed" || statusAirports === "failed")
     return <p>Errore: {error || errorAirports}</p>;
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatchFootPrint(
+      fetchFootPrint({
+        origin: selectedOrigin?.value,
+        destination: selectedDestination?.value,
+        cabinClass: selectedClass?.value,
+      })
+    );
+  }
+
   return (
     <div className={className}>
       {children}
       <StyledForm>
         <StyledContainerImageBg></StyledContainerImageBg>
         <StyledRowOne>
-          <StyledLabel htmlFor="departure">Partenza</StyledLabel>
+          <StyledLabel htmlFor="origin">Partenza</StyledLabel>
           <StyledInput
             options={listAirports.map((airport) => ({
               value: airport.code,
-              label: `${airport.name} - ${airport.city} - ${airport.state}`,
+              label: `${airport.name} - ${airport.city} - ${airport.state} - ${airport.code}`,
             }))}
-            id="departure"
+            value={selectedOrigin}
+            onChange={(option) => dispatchFootPrint(setOrigin(option))}
+            id="origin"
             styles={customStylesInput}
           />
-          <StyledLabel htmlFor="arrival">Destinazione</StyledLabel>
+          <StyledLabel htmlFor="destination">Destinazione</StyledLabel>
           <StyledInput
             options={listAirports.map((airport) => ({
               value: airport.code,
               label: `${airport.name} - ${airport.city} - ${airport.state}`,
             }))}
-            id="arrival"
+            value={selectedDestination}
+            onChange={(option) => dispatchFootPrint(setDestination(option))}
+            id="destination"
             styles={customStylesInput}
           />
 
@@ -145,9 +177,11 @@ function ContainerForm({ className, children }) {
           <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
           <StyledInput
             options={list.map((airplanes) => ({
-              value: airplanes.id,
-              label: `${airplanes.model} `,
+              value: airplanes.seating,
+              label: `${airplanes.model}`,
             }))}
+            value={selectedAirplane}
+            onChange={(option) => dispatchFootPrint(setAirplane(option))}
             id="airplane"
             styles={customStylesInput}
           />
@@ -157,12 +191,14 @@ function ContainerForm({ className, children }) {
               value: classe.value,
               label: `${classe.label}`,
             }))}
+            value={selectedClass}
+            onChange={(option) => dispatchFootPrint(setClass(option))}
             id="class"
             styles={customStylesInput}
           />
         </StyledRowTwo>
         <StyledRowButton>
-          <StyledButtonForm>
+          <StyledButtonForm onClick={handleSubmit}>
             <span>Calcola la tua impronta</span>
           </StyledButtonForm>
           <StyledContainerFootPrintImage></StyledContainerFootPrintImage>

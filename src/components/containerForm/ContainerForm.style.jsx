@@ -69,6 +69,7 @@ export const StyledButtonForm = styled.button`
   font-size: 12px;
   text-align: left;
   cursor: pointer;
+  z-index: 2;
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -102,6 +103,7 @@ export const StyledContainerImageBg = styled.div`
   left: -20px;
   width: 100%;
   height: 100%;
+  z-index: 0;
 `;
 
 export const StyledContainaerCounter = styled.div`

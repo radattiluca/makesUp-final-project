@@ -10,6 +10,7 @@ import bgformMobile from "../../assets/image/Calcola la tua impronta.png";
 import imageFoot from "../../assets/image/imageFoot.png";
 import imageFoots from "../../assets/image/imageFoots.png";
 import treedom from "../../assets/image/Treedom.png";
+import goClimate from "../../assets/image/goClimate_logo.png";
 
 export const StyledContainerResults = styled(ContainerResults)`
   display: flex;
@@ -17,29 +18,6 @@ export const StyledContainerResults = styled(ContainerResults)`
   padding-bottom: 40px;
 `;
 
-export const StyledFakeForm = styled.div`
-  background-color: #edeced;
-  width: 80%;
-  margin: auto;
-  margin-top: 400px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  position: relative;
-`;
-
-export const StyledRowOne = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
-export const StyledRowTwo = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-`;
 export const StyledContainerCo2 = styled.div`
   width: 80%;
   background-color: #edeced;
@@ -57,7 +35,7 @@ export const StyledContainerCo2 = styled.div`
 `;
 export const StyledRowButton = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #edeced;
@@ -100,6 +78,12 @@ export const StyledButtonForm = styled.button`
   font-size: 12px;
   text-align: left;
   cursor: pointer;
+  margin-bottom: 5px;
+
+  & a {
+    text-decoration: none;
+    color: #edeced;
+  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -128,15 +112,16 @@ export const StyledContainerTreedom = styled.div`
   background-size: contain;
   position: absolute;
   right: 55px;
+  top: 13px;
 `;
 
-export const StyledContainerImageBg = styled.div`
-  position: absolute;
-  background-image: url("${bgformMobile}");
+export const StyledContainerGoClimate = styled.div`
+  width: 15px;
+  height: 15px;
+  background-image: url("${goClimate}");
   background-repeat: no-repeat;
   background-size: contain;
-  top: -20px;
-  left: -20px;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  right: 50px;
+  bottom: 22px;
 `;
