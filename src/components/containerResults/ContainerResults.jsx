@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //import store
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+//import slices
+import { fetchFootPrint } from "../../redux/slices/footPrintClientApi.slice";
+import {
+  setOrigin,
+  setDestination,
+  setClass,
+} from "../../redux/slices/flightSelection.slice";
 
 //import styles
 import {
@@ -14,6 +22,7 @@ import {
   StyledContainerFootPrintImage,
   StyledContainerDoublePrintImage,
   StyledContainerTreedom,
+  StyledContainerGoClimate,
   StyledFakeForm,
   StyledFakeInput,
   StyledFakeLabel,
@@ -21,6 +30,44 @@ import {
 
 function ContainerResults({ className, children }) {
   const count = useSelector((state) => state.counterPassengers.value);
+  const { selectedOrigin, selectedDestination, selectedClass } = useSelector(
+    (state) => state.flightSelection
+  );
+
+  const dispatchFootPrint = useDispatch();
+  const {
+    footprint,
+    offset_prices,
+    details_url,
+    statusFootPrint,
+    errorFootPrint,
+  } = useSelector((state) => state.footprint);
+
+  useEffect(() => {
+    if (statusFootPrint === "idle") {
+      dispatchFootPrint(fetchFootPrint());
+      console.log("nell'useEffect: " + footprint);
+      // goClimateApi();
+    }
+  }, [footprint]);
+
+  console.log("Fuori dall'useEffect: " + footprint);
+  console.log("🛑 Stato fuori useEffect:", JSON.stringify(footprint, null, 2));
+
+  if (statusFootPrint === "loading") return <p>Caricamento...</p>; //da mettere lo stile
+  if (statusFootPrint === "failed") return <p>Errore: {errorFootPrint}</p>;
+
+  const co2PerPerson = footprint / 1000 || "N/A";
+  const totalCo2 = `${co2PerPerson}` * 140 || "N/A";
+  // const offsetAmounts = offset_prices.map(
+  //   (price) => ` ${Number(price.amount / 100)}${price.currency}`
+  // );
+  // console.log(offsetAmounts);
+  const urlCompensation = details_url || "N/A";
+  const urlTreedom = "https://www.treedom.net/it";
+
+  // console.log(`Costo impronta ${offset}, link: ${urlCompensation}`);
+
   return (
     <div className={className}>
       {children}
@@ -45,21 +92,30 @@ function ContainerResults({ className, children }) {
         <h1>La tua impronta</h1>
         <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
         <StyledFakeInput>
-          0.100t di Co2
+          {co2PerPerson}t di Co2
           <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
         </StyledFakeInput>
         <StyledFakeLabel>L'intero volo</StyledFakeLabel>
         <StyledFakeInput>
-          10.4t di Co2
+          {totalCo2}t di Co2
           <StyledContainerDoublePrintImage></StyledContainerDoublePrintImage>
         </StyledFakeInput>
       </StyledContainerCo2>
 
       <StyledRowButton>
         <StyledButtonForm>
-          <span>Compensa su Treedom</span>
+          <a href={urlTreedom} target="_blank" rel="noopener noreferrer">
+            <span>Compensa su Treedom</span>
+          </a>
         </StyledButtonForm>
         <StyledContainerTreedom></StyledContainerTreedom>
+
+        <StyledButtonForm>
+          <a href={urlCompensation} target="_blank" rel="noopener noreferrer">
+            <span>Compensa su GoClimate</span>
+          </a>
+        </StyledButtonForm>
+        <StyledContainerGoClimate></StyledContainerGoClimate>
       </StyledRowButton>
     </div>
   );

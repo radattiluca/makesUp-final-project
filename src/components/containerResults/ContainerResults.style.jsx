@@ -10,6 +10,7 @@ import bgformMobile from "../../assets/image/Calcola la tua impronta.png";
 import imageFoot from "../../assets/image/imageFoot.png";
 import imageFoots from "../../assets/image/imageFoots.png";
 import treedom from "../../assets/image/Treedom.png";
+import goClimate from "../../assets/image/goClimate_logo.png";
 
 export const StyledContainerResults = styled(ContainerResults)`
   display: flex;
@@ -57,7 +58,7 @@ export const StyledContainerCo2 = styled.div`
 `;
 export const StyledRowButton = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #edeced;
@@ -100,6 +101,12 @@ export const StyledButtonForm = styled.button`
   font-size: 12px;
   text-align: left;
   cursor: pointer;
+  margin-bottom: 5px;
+
+  & a {
+    text-decoration: none;
+    color: #edeced;
+  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -128,6 +135,18 @@ export const StyledContainerTreedom = styled.div`
   background-size: contain;
   position: absolute;
   right: 55px;
+  top: 13px;
+`;
+
+export const StyledContainerGoClimate = styled.div`
+  width: 15px;
+  height: 15px;
+  background-image: url("${goClimate}");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 50px;
+  bottom: 22px;
 `;
 
 export const StyledContainerImageBg = styled.div`
