@@ -8,6 +8,7 @@ export const fetchAirplanes = createAsyncThunk(
     if (!response.ok) {
       throw new Error("Errore nel recupero dei dati");
     }
+
     return await response.json();
   }
 );

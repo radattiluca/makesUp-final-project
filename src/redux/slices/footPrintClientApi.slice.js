@@ -31,7 +31,7 @@ const footPrintSlice = createSlice({
   name: "footprint",
   initialState: {
     footprint: null,
-    offset_prices: [], // Aggiunto per coerenza con la risposta API
+    offset_prices: [],
     details_url: "",
     statusFootPrint: "idle", // idle | loading | succeeded | failed
     errorFootPrint: null,
