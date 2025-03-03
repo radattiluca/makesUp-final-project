@@ -95,6 +95,19 @@ function ContainerForm({ className, children }) {
     (state) => state.flightSelection
   );
 
+  const [airplaneSelected, setAirplaneSelected] = useState({
+    seatingFlight: "",
+  });
+
+  function handleAirplaneSelected(e) {
+    const { value } = e.target;
+    const seating = value;
+    setAirplaneSelected({
+      ...airplaneSelected,
+      seatingFlight: seating,
+    });
+  }
+
   useEffect(() => {
     if (status === "idle") {
       dispatchAirplanes(fetchAirplanes());
@@ -175,6 +188,8 @@ function ContainerForm({ className, children }) {
               value: airplanes.seating,
               label: `${airplanes.model}`,
             }))}
+            value={airplaneSelected.value}
+            onChange={handleAirplaneSelected}
             id="airplane"
             styles={customStylesInput}
           />
