@@ -16,6 +16,7 @@ import {
   setOrigin,
   setDestination,
   setClass,
+  setAirplane,
 } from "../../redux/slices/flightSelection.slice";
 
 //import styles
@@ -82,6 +83,7 @@ const customStylesInput = {
 };
 
 function ContainerForm({ className, children }) {
+  // andiamo a prendere gli stati con useSelector e utilizziamo dispatch per fare le azioni
   const count = useSelector((state) => state.counterPassengers.value);
   const dispatch = useDispatch();
   const dispatchAirplanes = useDispatch();
@@ -91,22 +93,12 @@ function ContainerForm({ className, children }) {
     (state) => state.airports
   );
   const dispatchFootPrint = useDispatch();
-  const { selectedOrigin, selectedDestination, selectedClass } = useSelector(
-    (state) => state.flightSelection
-  );
-
-  const [airplaneSelected, setAirplaneSelected] = useState({
-    seatingFlight: "",
-  });
-
-  function handleAirplaneSelected(e) {
-    const { value } = e.target;
-    const seating = value;
-    setAirplaneSelected({
-      ...airplaneSelected,
-      seatingFlight: seating,
-    });
-  }
+  const {
+    selectedOrigin,
+    selectedDestination,
+    selectedClass,
+    selectedAirplane,
+  } = useSelector((state) => state.flightSelection);
 
   useEffect(() => {
     if (status === "idle") {
@@ -188,8 +180,8 @@ function ContainerForm({ className, children }) {
               value: airplanes.seating,
               label: `${airplanes.model}`,
             }))}
-            value={airplaneSelected.value}
-            onChange={handleAirplaneSelected}
+            value={selectedAirplane}
+            onChange={(option) => dispatchFootPrint(setAirplane(option))}
             id="airplane"
             styles={customStylesInput}
           />

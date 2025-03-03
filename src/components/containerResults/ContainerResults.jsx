@@ -9,6 +9,7 @@ import {
   setOrigin,
   setDestination,
   setClass,
+  setAirplane,
 } from "../../redux/slices/flightSelection.slice";
 
 //import styles
@@ -26,9 +27,12 @@ import {
 
 function ContainerResults({ className, children }) {
   const count = useSelector((state) => state.counterPassengers.value);
-  const { selectedOrigin, selectedDestination, selectedClass } = useSelector(
-    (state) => state.flightSelection
-  );
+  const {
+    selectedOrigin,
+    selectedDestination,
+    selectedClass,
+    selectedAirplane,
+  } = useSelector((state) => state.flightSelection);
 
   const dispatchFootPrint = useDispatch();
   const {
@@ -52,16 +56,14 @@ function ContainerResults({ className, children }) {
   if (statusFootPrint === "loading") return <p>Caricamento...</p>; //da mettere lo stile
   if (statusFootPrint === "failed") return <p>{errorFootPrint}</p>;
 
-  const co2PerPerson = footprint / 1000 || "N/A";
-  const totalCo2 = `${co2PerPerson}` * 140 || "N/A";
-  // const offsetAmounts = offset_prices.map(
-  //   (price) => ` ${Number(price.amount / 100)}${price.currency}`
-  // );
-  // console.log(offsetAmounts);
+  const co2PerPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
+  const value = selectedAirplane?.value;
+  const loadFactory = Math.round(value * 0.8);
+  const co2ForPassengers = `${co2PerPerson * Number(loadFactory)}`;
+  const totalCo2 = Number(co2ForPassengers).toFixed(2);
+
   const urlCompensation = details_url || "N/A";
   const urlTreedom = "https://www.treedom.net/it";
-
-  // console.log(`Costo impronta ${offset}, link: ${urlCompensation}`);
 
   return (
     <div className={className}>
