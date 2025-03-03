@@ -13,17 +13,13 @@ import {
 
 //import styles
 import {
-  StyledRowOne,
-  StyledRowTwo,
   StyledRowButton,
   StyledButtonForm,
   StyledContainerCo2,
-  StyledContainerImageBg,
   StyledContainerFootPrintImage,
   StyledContainerDoublePrintImage,
   StyledContainerTreedom,
   StyledContainerGoClimate,
-  StyledFakeForm,
   StyledFakeInput,
   StyledFakeLabel,
 } from "./ContainerResults.style";
@@ -47,7 +43,6 @@ function ContainerResults({ className, children }) {
     if (statusFootPrint === "idle") {
       dispatchFootPrint(fetchFootPrint());
       console.log("nell'useEffect: " + footprint);
-      // goClimateApi();
     }
   }, [footprint]);
 
@@ -55,7 +50,7 @@ function ContainerResults({ className, children }) {
   console.log("🛑 Stato fuori useEffect:", JSON.stringify(footprint, null, 2));
 
   if (statusFootPrint === "loading") return <p>Caricamento...</p>; //da mettere lo stile
-  if (statusFootPrint === "failed") return <p>Errore: {errorFootPrint}</p>;
+  if (statusFootPrint === "failed") return <p>{errorFootPrint}</p>;
 
   const co2PerPerson = footprint / 1000 || "N/A";
   const totalCo2 = `${co2PerPerson}` * 140 || "N/A";
@@ -71,23 +66,7 @@ function ContainerResults({ className, children }) {
   return (
     <div className={className}>
       {children}
-      <StyledFakeForm>
-        <StyledContainerImageBg></StyledContainerImageBg>
-        <StyledRowOne>
-          <StyledFakeLabel>Partenza</StyledFakeLabel>
-          <StyledFakeInput>input form partenza</StyledFakeInput>
-          <StyledFakeLabel>Destinazione</StyledFakeLabel>
-          <StyledFakeInput>input form destinazione</StyledFakeInput>
-          <StyledFakeLabel>Passeggeri</StyledFakeLabel>
-          <StyledFakeInput>{count}</StyledFakeInput>
-        </StyledRowOne>
-        <StyledRowTwo>
-          <StyledFakeLabel>Aereo</StyledFakeLabel>
-          <StyledFakeInput>aereo</StyledFakeInput>
-          <StyledFakeLabel>Classe</StyledFakeLabel>
-          <StyledFakeInput>classe</StyledFakeInput>
-        </StyledRowTwo>
-      </StyledFakeForm>
+
       <StyledContainerCo2>
         <h1>La tua impronta</h1>
         <StyledFakeLabel>Il tuo volo</StyledFakeLabel>

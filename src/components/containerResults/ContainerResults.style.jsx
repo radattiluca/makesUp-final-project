@@ -18,29 +18,6 @@ export const StyledContainerResults = styled(ContainerResults)`
   padding-bottom: 40px;
 `;
 
-export const StyledFakeForm = styled.div`
-  background-color: #edeced;
-  width: 80%;
-  margin: auto;
-  margin-top: 400px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  position: relative;
-`;
-
-export const StyledRowOne = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
-export const StyledRowTwo = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-`;
 export const StyledContainerCo2 = styled.div`
   width: 80%;
   background-color: #edeced;
@@ -147,15 +124,4 @@ export const StyledContainerGoClimate = styled.div`
   position: absolute;
   right: 50px;
   bottom: 22px;
-`;
-
-export const StyledContainerImageBg = styled.div`
-  position: absolute;
-  background-image: url("${bgformMobile}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: -20px;
-  left: -20px;
-  width: 100%;
-  height: 100%;
 `;

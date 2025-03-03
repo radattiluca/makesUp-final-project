@@ -172,8 +172,8 @@ function ContainerForm({ className, children }) {
           <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
           <StyledInput
             options={list.map((airplanes) => ({
-              value: airplanes.id,
-              label: `${airplanes.model} `,
+              value: airplanes.seating,
+              label: `${airplanes.model}`,
             }))}
             id="airplane"
             styles={customStylesInput}
