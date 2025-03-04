@@ -21,7 +21,7 @@ import {
 
 //import styles
 import {
-  StyledContainerForm,
+  StyledContainerFormDesktop,
   StyledForm,
   StyledInput,
   StyledRowOne,
@@ -35,7 +35,7 @@ import {
   StyledContainaerCounter,
   StyledButtonCounter,
   StyledLabelPassengers,
-} from "./ContainerForm.style";
+} from "./ContainerFormDesktop.style";
 // import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
 // import goClimateApi from "../clientApi/ClientApi";
@@ -151,15 +151,15 @@ function ContainerForm({ className, children }) {
             id="origin"
             styles={customStylesInput}
           />
-          <StyledLabel htmlFor="destination">Destinazione</StyledLabel>
+          <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
           <StyledInput
-            options={listAirports.map((airport) => ({
-              value: airport.code,
-              label: `${airport.name} - ${airport.city} - ${airport.state}`,
+            options={list.map((airplanes) => ({
+              value: airplanes.seating,
+              label: `${airplanes.model}`,
             }))}
-            value={selectedDestination}
-            onChange={(option) => dispatchFootPrint(setDestination(option))}
-            id="destination"
+            value={selectedAirplane}
+            onChange={(option) => dispatchFootPrint(setAirplane(option))}
+            id="airplane"
             styles={customStylesInput}
           />
 
@@ -185,15 +185,15 @@ function ContainerForm({ className, children }) {
           </StyledContainaerCounter>
         </StyledRowOne>
         <StyledRowTwo>
-          <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
+          <StyledLabel htmlFor="destination">Destinazione</StyledLabel>
           <StyledInput
-            options={list.map((airplanes) => ({
-              value: airplanes.seating,
-              label: `${airplanes.model}`,
+            options={listAirports.map((airport) => ({
+              value: airport.code,
+              label: `${airport.name} - ${airport.city} - ${airport.state}`,
             }))}
-            value={selectedAirplane}
-            onChange={(option) => dispatchFootPrint(setAirplane(option))}
-            id="airplane"
+            value={selectedDestination}
+            onChange={(option) => dispatchFootPrint(setDestination(option))}
+            id="destination"
             styles={customStylesInput}
           />
           <StyledLabel htmlFor="class">Classe</StyledLabel>

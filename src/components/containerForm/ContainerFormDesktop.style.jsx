@@ -1,38 +1,37 @@
 import styled from "styled-components";
 import Select from "react-select";
 //import components
-import ContainerForm from "./ContainerForm";
+import ContainerFormDesktop from "./ContainerFormDesktop";
 
 //import img
-import bgformMobile from "../../assets/image/Calcola la tua impronta.png";
+import bgForm from "../../assets/image/bg-image-form.png";
 import imageFoot from "../../assets/image/imageFoot.png";
 import imageFoots from "../../assets/image/imageFoots.png";
 
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
-export const StyledContainerForm = styled(ContainerForm)`
+// /* Schermi grandi o ad alta risoluzione */
+// @media all and (max-width: 1690px) { ... }
+
+// /* Schermi Desktop o Portatili */
+// @media all and (min-width: 1280px) and (max-width: 1689px) { ... }
+
+export const StyledContainerFormDesktop = styled(ContainerFormDesktop)`
   display: flex;
   flex-direction: column;
 `;
 
 export const StyledForm = styled.form`
   background-color: rgb(237, 236, 237, 0.9);
-  width: 300px;
+  width: 800px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 100px;
   padding: 20px;
   border-radius: 12px;
   position: relative;
-
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    width: 400px;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
-    width: 400px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 `;
 
 export const StyledRowOne = styled.div`
@@ -45,27 +44,19 @@ export const StyledRowTwo = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: start;
+  margin-bottom: auto;
 `;
 
 export const StyledRowButton = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  grid-column: 1/3;
 `;
 
 export const StyledInput = styled(Select)`
-  width: 300px;
-
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    width: 400px;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
-    width: 400px;
-  }
+  width: 100%;
 `;
 
 export const StyledLabel = styled.label`
@@ -75,7 +66,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButtonForm = styled.button`
-  width: 80%;
+  width: 250px;
   background-color: #2b5353;
   border: none;
   border-radius: 20px;
@@ -84,7 +75,7 @@ export const StyledButtonForm = styled.button`
   color: #edeced;
   font-family: Open Sans, sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
   z-index: 2;
@@ -97,8 +88,9 @@ export const StyledContainerFootPrintImage = styled.div`
   background-image: url("${imageFoot}");
   background-repeat: no-repeat;
   background-size: contain;
-  bottom: 24px;
-  right: 50px;
+  bottom: 26px;
+  right: 285px;
+  z-index: 2;
 `;
 
 export const StyledContainerDoublePrintImage = styled.div`
@@ -114,18 +106,18 @@ export const StyledContainerDoublePrintImage = styled.div`
 
 export const StyledContainerImageBg = styled.div`
   position: absolute;
-  background-image: url("${bgformMobile}");
+  background-image: url("${bgForm}");
   background-repeat: no-repeat;
   background-size: contain;
-  top: -20px;
-  left: -20px;
+  top: -25px;
+  left: 80px;
   width: 100%;
   height: 100%;
   z-index: 0;
 `;
 
 export const StyledContainaerCounter = styled.div`
-  width: 40%;
+  width: 30%;
   height: 28px;
   background-color: rgb(43, 83, 83, 0.9);
   border-radius: 20px;

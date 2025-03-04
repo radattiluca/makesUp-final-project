@@ -4,6 +4,7 @@ import { airplanesReducer } from "./slices/airplanes.slice";
 import { airportsReducer } from "./slices/airports.slice";
 import { footPrintReducer } from "./slices/footPrintClientApi.slice";
 import { flightSelectionReducer } from "./slices/flightSelection.slice";
+import { isClickedReducer } from "./slices/isClicked.slice";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     airports: airportsReducer,
     footprint: footPrintReducer,
     flightSelection: flightSelectionReducer,
+    isClicked: isClickedReducer,
   },
 });

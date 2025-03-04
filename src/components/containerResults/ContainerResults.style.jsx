@@ -19,18 +19,42 @@ export const StyledContainerResults = styled(ContainerResults)`
 `;
 
 export const StyledContainerCo2 = styled.div`
-  width: 80%;
-  background-color: #edeced;
+  width: 300px;
+  background-color: rgb(237, 236, 237, 0.9);
   margin: auto;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 30px auto 20px auto;
+  z-index: 1;
 
   & h1 {
-    color: #b9aba3;
+    /* color: #b9aba3; */
+    color: #98887f;
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
+  }
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    text-align: center;
+    width: 800px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    text-align: center;
+    width: 800px;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    width: 400px;
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    width: 400px;
   }
 `;
 export const StyledRowButton = styled.div`
@@ -38,13 +62,33 @@ export const StyledRowButton = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #edeced;
+  background-color: rgb(237, 236, 237, 0.9);
   padding: 10px;
-  width: 80%;
+  width: 300px;
   margin: auto;
   margin-bottom: 40px;
   border-radius: 12px;
   position: relative;
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    width: 800px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    width: 800px;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    width: 400px;
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    width: 400px;
+  }
 `;
 
 export const StyledFakeInput = styled.div`
@@ -58,12 +102,54 @@ export const StyledFakeInput = styled.div`
   align-items: center;
   padding: 0 0 0 10px;
   color: #edeced;
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    margin: auto;
+    width: 250px;
+    justify-content: center;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    margin: auto;
+    width: 250px;
+    justify-content: center;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+  }
 `;
 
 export const StyledFakeLabel = styled.div`
   margin: 10px auto 10px 5px;
   color: #6d8654;
   font-weight: 700;
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    margin: 10px auto 10px auto;
+    width: 250px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    width: 250px;
+    margin: 10px auto 10px auto;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+  }
 `;
 
 export const StyledButtonForm = styled.button`
@@ -78,11 +164,34 @@ export const StyledButtonForm = styled.button`
   font-size: 12px;
   text-align: left;
   cursor: pointer;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  margin: 5px 0 5px 0;
 
   & a {
     text-decoration: none;
     color: #edeced;
+  }
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    width: 250px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    width: 250px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
   }
 `;
 
@@ -93,6 +202,22 @@ export const StyledContainerFootPrintImage = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 10px;
+
+  /* Schermi grandi o ad alta risoluzione */
+@media all and (min-width: 1690px) { 
+  margin-left: 10px;
+ }
+
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1280px) and (max-width: 1689px) { 
+  margin-left: 10px;
+ }
+
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+
+/* Tablet in modalità verticale */
+@media all and (min-width: 481px) and (max-width: 736px) { ... }
 `;
 
 export const StyledContainerDoublePrintImage = styled.div`
@@ -102,6 +227,22 @@ export const StyledContainerDoublePrintImage = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 10px;
+
+  /* Schermi grandi o ad alta risoluzione */
+@media all and (min-width: 1690px) { 
+  margin-left: 10px;
+ }
+
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1280px) and (max-width: 1689px) { 
+  margin-left: 10px;
+ }
+
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+
+/* Tablet in modalità verticale */
+@media all and (min-width: 481px) and (max-width: 736px) { ... }
 `;
 
 export const StyledContainerTreedom = styled.div`
@@ -113,6 +254,24 @@ export const StyledContainerTreedom = styled.div`
   position: absolute;
   right: 55px;
   top: 13px;
+
+  /* Schermi grandi o ad alta risoluzione */
+@media all and (min-width: 1690px) { 
+  right: 295px;
+  top: 18px;
+ }
+
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1280px) and (max-width: 1689px) { 
+  right: 295px;
+  top: 18px;
+ }
+
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+
+/* Tablet in modalità verticale */
+@media all and (min-width: 481px) and (max-width: 736px) { ... }
 `;
 
 export const StyledContainerGoClimate = styled.div`
@@ -124,4 +283,22 @@ export const StyledContainerGoClimate = styled.div`
   position: absolute;
   right: 50px;
   bottom: 22px;
+
+  /* Schermi grandi o ad alta risoluzione */
+@media all and (min-width: 1690px) { 
+  right: 290px;
+  bottom: 22px;
+ }
+
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1280px) and (max-width: 1689px) { 
+  right: 290px;
+  bottom: 22px;
+ }
+
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+
+/* Tablet in modalità verticale */
+@media all and (min-width: 481px) and (max-width: 736px) { ... }
 `;

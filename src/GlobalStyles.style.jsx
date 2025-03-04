@@ -7,7 +7,7 @@
 // color-text-label #6d8654
 
 // /* Schermi grandi o ad alta risoluzione */
-// @media all and (max-width: 1690px) { ... }
+// @media all and (min-width: 1690px) { ... }
 
 // /* Schermi Desktop o Portatili */
 // @media all and (min-width: 1280px) and (max-width: 1689px) { ... }

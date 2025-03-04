@@ -12,6 +12,27 @@ export const StyledButtonToForm = styled(ButtonToForm)`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 220px;
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    width: 400px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    width: 300px;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    width: 280px;
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    width: 250px;
+  }
 `;
 
 export const Button = styled.button`
@@ -24,4 +45,23 @@ export const Button = styled.button`
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 1690px) {
+    font-size: 23px;
+  }
+
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    font-size: 21px;
+  }
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    font-size: 20px;
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    font-size: 18px;
+  }
 `;
