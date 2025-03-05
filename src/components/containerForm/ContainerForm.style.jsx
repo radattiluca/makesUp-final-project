@@ -75,7 +75,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButtonForm = styled.button`
-  width: 80%;
+  width: 180px;
   background-color: #2b5353;
   border: none;
   border-radius: 20px;
@@ -85,9 +85,17 @@ export const StyledButtonForm = styled.button`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
   font-size: 12px;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   z-index: 2;
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -98,7 +106,18 @@ export const StyledContainerFootPrintImage = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 24px;
-  right: 50px;
+  right: 68px;
+  z-index: 2;
+
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    right: 120px;
+  }
+
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    right: 120px;
+  }
 `;
 
 export const StyledContainerDoublePrintImage = styled.div`

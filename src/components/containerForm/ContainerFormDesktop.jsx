@@ -130,8 +130,9 @@ function ContainerForm({ className, children }) {
           cabinClass: selectedClass?.value,
         })
       );
+    } else {
+      alert("Enter all data before proceeding");
     }
-    alert("Enter all data before proceeding");
   }
 
   return (

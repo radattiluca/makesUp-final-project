@@ -66,7 +66,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButtonForm = styled.button`
-  width: 250px;
+  width: 230px;
   background-color: #2b5353;
   border: none;
   border-radius: 20px;
@@ -76,7 +76,7 @@ export const StyledButtonForm = styled.button`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   z-index: 2;
 `;
@@ -89,7 +89,7 @@ export const StyledContainerFootPrintImage = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 26px;
-  right: 285px;
+  right: 300px;
   z-index: 2;
 `;
 
@@ -110,7 +110,7 @@ export const StyledContainerImageBg = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   top: -25px;
-  left: 80px;
+  left: 150px;
   width: 100%;
   height: 100%;
   z-index: 0;

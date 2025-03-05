@@ -73,11 +73,13 @@ export const StyledRowButton = styled.div`
   /* Schermi grandi o ad alta risoluzione */
   @media all and (min-width: 1690px) {
     width: 800px;
+    flex-direction: row;
   }
 
   /* Schermi Desktop o Portatili */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
     width: 800px;
+    flex-direction: row;
   }
 
   /* Tablet in modalità orizzontale */
@@ -106,14 +108,14 @@ export const StyledFakeInput = styled.div`
   /* Schermi grandi o ad alta risoluzione */
   @media all and (min-width: 1690px) {
     margin: auto;
-    width: 250px;
+    width: 220px;
     justify-content: center;
   }
 
   /* Schermi Desktop o Portatili */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
     margin: auto;
-    width: 250px;
+    width: 220px;
     justify-content: center;
   }
 
@@ -153,7 +155,7 @@ export const StyledFakeLabel = styled.div`
 `;
 
 export const StyledButtonForm = styled.button`
-  width: 80%;
+  width: 180px;
   background-color: #2b5353;
   border: none;
   border-radius: 20px;
@@ -174,24 +176,32 @@ export const StyledButtonForm = styled.button`
 
   /* Schermi grandi o ad alta risoluzione */
   @media all and (min-width: 1690px) {
-    width: 250px;
-    text-align: center;
+    width: 215px;
+    text-align: left;
     font-size: 14px;
+    margin-right: 20px;
   }
 
   /* Schermi Desktop o Portatili */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
-    width: 250px;
-    text-align: center;
+    width: 215px;
+    text-align: left;
     font-size: 14px;
+    margin-right: 20px;
   }
 
   /* Tablet in modalità orizzontale */
   @media all and (min-width: 737px) and (max-width: 1279px) {
+    width: 208px;
+    text-align: left;
+    font-size: 14px;
   }
 
   /* Tablet in modalità verticale */
   @media all and (min-width: 481px) and (max-width: 736px) {
+    width: 208px;
+    text-align: left;
+    font-size: 14px;
   }
 `;
 
@@ -252,26 +262,32 @@ export const StyledContainerTreedom = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  right: 55px;
-  top: 13px;
+  right: 70px;
+  top: 18px;
 
   /* Schermi grandi o ad alta risoluzione */
-@media all and (min-width: 1690px) { 
-  right: 295px;
-  top: 18px;
- }
+  @media all and (min-width: 1690px) {
+    left: 350px;
+    top: 18px;
+  }
 
-/* Schermi Desktop o Portatili */
-@media all and (min-width: 1280px) and (max-width: 1689px) { 
-  right: 295px;
-  top: 18px;
- }
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    left: 350px;
+    top: 18px;
+  }
 
-/* Tablet in modalità orizzontale */
-@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    right: 105px;
+    top: 18px;
+  }
 
-/* Tablet in modalità verticale */
-@media all and (min-width: 481px) and (max-width: 736px) { ... }
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    right: 105px;
+    top: 18px;
+  }
 `;
 
 export const StyledContainerGoClimate = styled.div`
@@ -281,24 +297,30 @@ export const StyledContainerGoClimate = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  right: 50px;
-  bottom: 22px;
+  right: 70px;
+  bottom: 21px;
 
   /* Schermi grandi o ad alta risoluzione */
-@media all and (min-width: 1690px) { 
-  right: 290px;
-  bottom: 22px;
- }
+  @media all and (min-width: 1690px) {
+    right: 200px;
+    bottom: 22px;
+  }
 
-/* Schermi Desktop o Portatili */
-@media all and (min-width: 1280px) and (max-width: 1689px) { 
-  right: 290px;
-  bottom: 22px;
- }
+  /* Schermi Desktop o Portatili */
+  @media all and (min-width: 1280px) and (max-width: 1689px) {
+    right: 200px;
+    bottom: 22px;
+  }
 
-/* Tablet in modalità orizzontale */
-@media all and (min-width: 737px) and (max-width: 1279px) { ... }
+  /* Tablet in modalità orizzontale */
+  @media all and (min-width: 737px) and (max-width: 1279px) {
+    right: 105px;
+    bottom: 22px;
+  }
 
-/* Tablet in modalità verticale */
-@media all and (min-width: 481px) and (max-width: 736px) { ... }
+  /* Tablet in modalità verticale */
+  @media all and (min-width: 481px) and (max-width: 736px) {
+    right: 105px;
+    bottom: 22px;
+  }
 `;
