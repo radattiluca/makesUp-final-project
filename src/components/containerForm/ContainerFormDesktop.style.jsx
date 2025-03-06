@@ -13,7 +13,6 @@ import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 export const StyledContainerFormDesktop = styled(ContainerFormDesktop)`
   display: flex;
   flex-direction: column;
-  height: 100%;
 `;
 
 export const StyledForm = styled.form`
@@ -27,10 +26,6 @@ export const StyledForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-
-  /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 2000px) {
-  }
 `;
 
 export const StyledRowOne = styled.div`

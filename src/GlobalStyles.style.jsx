@@ -8,21 +8,6 @@
 
 // color-price #ed955f;
 
-// /* Schermi grandi o ad alta risoluzione */
-// @media all and (min-width: 1690px) { ... }
-
-// /* Schermi Desktop o Portatili */
-// @media all and (min-width: 1280px) and (max-width: 1689px) { ... }
-
-// /* Tablet in modalità orizzontale */
-// @media all and (min-width: 737px) and (max-width: 1279px) { ... }
-
-// /* Tablet in modalità verticale */
-// @media all and (min-width: 481px) and (max-width: 736px) { ... }
-
-// /* Smartphone o piccoli Tablet */
-// @media all and (max-width: 480px) { ... }
-
 import { createGlobalStyle } from "styled-components";
 
 //import bg-image
@@ -56,13 +41,8 @@ export const GlobalStyles = createGlobalStyle`
           height: 100vh;
 
 
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
-    background-image: url("${mobileImage}");
-  }
-
-  /* Smartphone o piccoli Tablet */
-  @media all and (max-width: 480px) {
+  /* Tablet in vertical mode and Tablet in landscape mode */
+  @media all and (min-width: 480px) and (max-width: 736px) {
     background-image: url("${mobileImage}");
   }
     }

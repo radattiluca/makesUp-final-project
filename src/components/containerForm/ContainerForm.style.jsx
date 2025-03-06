@@ -24,13 +24,8 @@ export const StyledForm = styled.form`
   border-radius: 12px;
   position: relative;
 
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    width: 400px;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
+  /* Tablet in vertical mode and in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
     width: 400px;
   }
 `;
@@ -57,13 +52,8 @@ export const StyledRowButton = styled.div`
 export const StyledInput = styled(Select)`
   width: 300px;
 
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    width: 400px;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
+  /* Tablet in vertical mode and in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
     width: 400px;
   }
 `;
@@ -88,14 +78,6 @@ export const StyledButtonForm = styled.button`
   text-align: left;
   cursor: pointer;
   z-index: 2;
-
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
-  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -109,13 +91,8 @@ export const StyledContainerFootPrintImage = styled.div`
   right: 68px;
   z-index: 2;
 
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    right: 120px;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
+  /* Tablet in vertical mode and in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
     right: 120px;
   }
 `;

@@ -29,32 +29,32 @@ export const StyledContainerInfo = styled.div`
     color: #ed955f;
   }
 
-  /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 2000px) {
-    width: 1200px;
+  /* Large or high-resolution screens */
+  @media all and (min-width: 1690px) {
+    width: 1000px;
     height: 100%;
     overflow: visible;
 
     & h3 {
-      font-size: 1.8em;
+      font-size: 1.4em;
     }
   }
 
-  /* Schermi Desktop o Portatili */
+  /* Desktop or Laptop screens */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
     width: 900px;
     height: 100%;
     overflow: visible;
   }
 
-  /* Tablet in modalità orizzontale */
+  /* Tablet in landscape mode */
   @media all and (min-width: 737px) and (max-width: 1279px) {
     width: 500px;
     height: 100%;
     overflow: visible;
   }
 
-  /* Tablet in modalità verticale */
+  /* Tablet in vertical mode */
   @media all and (min-width: 481px) and (max-width: 736px) {
     width: 400px;
     height: 100%;
@@ -71,23 +71,18 @@ export const StyledParagraphInfo = styled.p`
   padding-bottom: 20px;
   text-align: center;
 
-  /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 2000px) {
-    font-size: 2em;
+  /* Large or high-resolution screens */
+  @media all and (min-width: 1690px) {
+    font-size: 1.5em;
   }
 
-  /* Schermi Desktop o Portatili */
+  /* Desktop or Laptop screens */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
     font-size: 1.3em;
   }
 
-  /* Tablet in modalità orizzontale */
-  @media all and (min-width: 737px) and (max-width: 1279px) {
-    font-size: 1.2em;
-  }
-
-  /* Tablet in modalità verticale */
-  @media all and (min-width: 481px) and (max-width: 736px) {
+  /* Tablet in vertical mode and Tablet in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
     font-size: 1.2em;
   }
 `;
@@ -107,11 +102,6 @@ export const StyledContainerArrow = styled.div`
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-
-    /* Schermi grandi o ad alta risoluzione */
-    @media all and (min-width: 2000px) {
-      width: 150px;
-    }
   }
 
   @keyframes ArrowUpDown {
@@ -140,16 +130,13 @@ export const ContainerTitle = styled.div`
   background-color: rgb(237, 149, 95, 0.8);
 
   & h1 {
-    font-size: 1em;
+    font-size: 0.8em;
     text-align: center;
     color: #edeced;
-  }
 
-  /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 2000px) {
-    margin-bottom: 80px;
-    & h1 {
-      font-size: 1.8em;
+    /* For anything */
+    @media all and (min-width: 481px) and (max-width: 1690px) {
+      font-size: 1em;
     }
   }
 `;

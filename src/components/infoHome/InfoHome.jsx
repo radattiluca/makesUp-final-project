@@ -16,6 +16,7 @@ function InfoHome({ className, children }) {
       <ContainerTitle>
         <h1>Compensa le emissioni del tuo viaggio aereo!</h1>
       </ContainerTitle>
+
       <StyledContainerInfo>
         <StyledParagraphInfo>
           Nessuno di noi, da solo, può fermare il surriscaldamento globale,
@@ -25,7 +26,7 @@ function InfoHome({ className, children }) {
         </StyledParagraphInfo>
         <StyledParagraphInfo>
           Ad esempio, <span>salvando quell'albero di noci </span>davanti casa,
-          piantato dal nonno, che sperava che un giorno qualcuno potesse
+          piantato dal nonno, che sperava che un giorno qualcuno ne potesse
           beneficiare della sua ombra e dei suoi frutti.
         </StyledParagraphInfo>
         <StyledParagraphInfo>

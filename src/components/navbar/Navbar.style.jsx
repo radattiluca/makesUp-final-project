@@ -31,23 +31,18 @@ export const CenterContainer = styled.div`
   & img {
     width: 160px;
 
-    /* Schermi grandi o ad alta risoluzione */
-    @media all and (min-width: 2000px) {
-      width: 350px;
+    /* Large or high-resolution screens */
+    @media all and (min-width: 1690px) {
+      width: 200px;
     }
 
-    /* Schermi Desktop o Portatili */
+    /* Desktop or Laptop screens */
     @media all and (min-width: 1280px) and (max-width: 1689px) {
       width: 190px;
     }
 
-    /* Tablet in modalità orizzontale */
-    @media all and (min-width: 737px) and (max-width: 1279px) {
-      width: 160px;
-    }
-
-    /* Tablet in modalità verticale */
-    @media all and (min-width: 481px) and (max-width: 736px) {
+    /* Tablet in vertical mode and landscape mode */
+    @media all and (min-width: 481px) and (max-width: 1279px) {
       width: 160px;
     }
   }

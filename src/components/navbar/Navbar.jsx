@@ -9,7 +9,6 @@ import {
 } from "./Navbar.style";
 
 //import Logo
-// import logo from "../../assets/image/MakesUp-Logo.png";
 import logoNavbar from "../../assets/image/MakesUp-Logo-Navbar.png";
 
 function Navbar({ className, children }) {

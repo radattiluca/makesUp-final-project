@@ -1,3 +1,5 @@
+//slice that manages the click state
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { value: false };
