@@ -49,12 +49,28 @@ const classe = [
 
 //questo ci serve per lo stile di react-select
 const customStylesInput = {
-  control: (provider) => ({
+  control: (provider, state) => ({
     ...provider,
     backgroundColor: "rgb(43, 83, 83, 0.9)",
     borderRadius: "20px",
+    color: "#edeced",
+    border: "none",
+    boxShadow: state.isFocused ? "0 0 5px #edeced" : "none",
+    outline: "none",
+    "&:hover": {
+      boxShadow: "none",
+    },
   }),
-
+  dropdownIndicator: (provider, state) => ({
+    ...provider,
+    color: state.isFocused ? "#6d8654" : "#edeced",
+    transform: state.selectProps.menuIsOpen ? "rotate(90deg)" : "rotate(0deg)",
+    transition: "transform 0.2s ease-in-out",
+    cursor: "pointer",
+    "&:hover": {
+      color: "#b9aba3",
+    },
+  }),
   menu: (provider) => ({
     ...provider,
     backgroundColor: "#edeced",
@@ -67,18 +83,28 @@ const customStylesInput = {
     ...provider,
     height: "100px",
     borderRadius: "10px",
+    backgroundColor: "#edeced",
   }),
   option: (provider, state) => ({
     ...provider,
     fontWeight: state.isSelected ? "800" : "500",
     color: "#edeced",
-    backgroundColor: "rgb(43, 83, 83, 0.7)",
+    backgroundColor: state.isSelected
+      ? "rgb(43, 83, 83, 0.4)"
+      : "rgb(43, 83, 83, 0.7)",
+
     borderBottom: "1px solid #edeced",
+    cursor: "pointer",
   }),
 
   singleValue: (provider) => ({
     ...provider,
     color: "#edeced",
+  }),
+
+  placeholder: (provider) => ({
+    ...provider,
+    color: "rgb(185, 171, 163, 0.7)",
   }),
 };
 
@@ -131,7 +157,7 @@ function ContainerForm({ className, children }) {
         })
       );
     } else {
-      alert("Enter all data before proceeding");
+      alert("Inserire tutti i dati prima di proseguire");
     }
   }
 
@@ -145,8 +171,9 @@ function ContainerForm({ className, children }) {
           <StyledInput
             options={listAirports.map((airport) => ({
               value: airport.code,
-              label: `${airport.name} - ${airport.city} - ${airport.state}`,
+              label: `${airport.city} - ${airport.name} -  ${airport.state}`,
             }))}
+            placeholder="..."
             value={selectedOrigin}
             onChange={(option) => dispatchFootPrint(setOrigin(option))}
             id="origin"
@@ -156,8 +183,9 @@ function ContainerForm({ className, children }) {
           <StyledInput
             options={listAirports.map((airport) => ({
               value: airport.code,
-              label: `${airport.name} - ${airport.city} - ${airport.state}`,
+              label: `${airport.city} - ${airport.name} -  ${airport.state}`,
             }))}
+            placeholder="..."
             value={selectedDestination}
             onChange={(option) => dispatchFootPrint(setDestination(option))}
             id="destination"
@@ -192,6 +220,7 @@ function ContainerForm({ className, children }) {
               value: airplanes.seating,
               label: `${airplanes.model}`,
             }))}
+            placeholder="..."
             value={selectedAirplane}
             onChange={(option) => dispatchFootPrint(setAirplane(option))}
             id="airplane"
@@ -203,6 +232,7 @@ function ContainerForm({ className, children }) {
               value: classe.value,
               label: `${classe.label}`,
             }))}
+            placeholder="..."
             value={selectedClass}
             onChange={(option) => dispatchFootPrint(setClass(option))}
             id="class"

@@ -9,7 +9,8 @@ import {
 } from "./Navbar.style";
 
 //import Logo
-import logo from "../../assets/image/MakesUp-Logo.png";
+// import logo from "../../assets/image/MakesUp-Logo.png";
+import logoNavbar from "../../assets/image/MakesUp-Logo-Navbar.png";
 
 function Navbar({ className, children }) {
   return (
@@ -17,7 +18,7 @@ function Navbar({ className, children }) {
       <NavbarInnerContainer>
         <LeftContainer></LeftContainer>
         <CenterContainer>
-          <img src={logo} alt="logo" />
+          <img src={logoNavbar} alt="logoNavbar" />
         </CenterContainer>
         <RightContainer></RightContainer>
       </NavbarInnerContainer>

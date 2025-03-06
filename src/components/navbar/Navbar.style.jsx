@@ -5,19 +5,20 @@ import Navbar from "./Navbar.jsx";
 
 export const StyledNavbar = styled(Navbar)`
   width: 100%;
-  /* background-color: #2b5353; */
+  background-color: rgb(43, 83, 83, 0.8);
   display: flex;
   flex-direction: column;
   position: sticky;
   top: 0;
-  z-index: 0;
+  z-index: 300;
 `;
 
 export const NavbarInnerContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
+  padding: 20px 0 10px 0;
 `;
 
 export const LeftContainer = styled.div``;
@@ -28,33 +29,26 @@ export const CenterContainer = styled.div`
   width: 100%;
 
   & img {
-    width: 100px;
-    height: 100px;
-    margin: 5px 0 0 0;
+    width: 160px;
 
     /* Schermi grandi o ad alta risoluzione */
-    @media all and (min-width: 1690px) {
-      width: 110px;
-      height: 110px;
-      margin: 10px 0 0 0;
+    @media all and (min-width: 2000px) {
+      width: 350px;
     }
 
     /* Schermi Desktop o Portatili */
     @media all and (min-width: 1280px) and (max-width: 1689px) {
-      width: 110px;
-      height: 110px;
+      width: 190px;
     }
 
     /* Tablet in modalità orizzontale */
     @media all and (min-width: 737px) and (max-width: 1279px) {
-      width: 110px;
-      height: 110px;
+      width: 160px;
     }
 
     /* Tablet in modalità verticale */
     @media all and (min-width: 481px) and (max-width: 736px) {
-      width: 100px;
-      height: 100px;
+      width: 160px;
     }
   }
 `;

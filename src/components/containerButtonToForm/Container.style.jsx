@@ -8,5 +8,5 @@ export const StyledContainerButtonToForm = styled(ContainerButtonToForm)`
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  height: 80%;
+  padding: 40px;
 `;

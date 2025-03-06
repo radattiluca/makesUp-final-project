@@ -6,6 +6,8 @@
 
 // color-text-label #6d8654
 
+// color-price #ed955f;
+
 // /* Schermi grandi o ad alta risoluzione */
 // @media all and (min-width: 1690px) { ... }
 

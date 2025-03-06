@@ -15,8 +15,8 @@ export const StyledButtonToForm = styled(ButtonToForm)`
   width: 220px;
 
   /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 1690px) {
-    width: 400px;
+  @media all and (min-width: 2000px) {
+    width: 430px;
   }
 
   /* Schermi Desktop o Portatili */
@@ -46,8 +46,8 @@ export const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   /* Schermi grandi o ad alta risoluzione */
-  @media all and (min-width: 1690px) {
-    font-size: 23px;
+  @media all and (min-width: 2000px) {
+    font-size: 30px;
   }
 
   /* Schermi Desktop o Portatili */

@@ -9,6 +9,7 @@ import { StyledContainerButtonToForm } from "../containerButtonToForm/Container.
 import { StyledContainerForm } from "../containerForm/ContainerForm.style";
 import { StyledContainerFormDesktop } from "../containerForm/ContainerFormDesktop.style";
 import { StyledContainerResults } from "../containerResults/ContainerResults.style.jsx";
+import { StyledInfoHome } from "../infoHome/InfoHome.style.jsx";
 
 import { useSelector } from "react-redux";
 
@@ -42,13 +43,14 @@ function App() {
             <StyledContainerResults />
           </>
         )}
-        <StyledContainerButtonToForm>
-          {!isClicked && (
-            <>
+        {!isClicked && (
+          <>
+            <StyledInfoHome></StyledInfoHome>
+            <StyledContainerButtonToForm>
               <StyledButtonToForm></StyledButtonToForm>
-            </>
-          )}
-        </StyledContainerButtonToForm>
+            </StyledContainerButtonToForm>
+          </>
+        )}
       </StyledAppContainer>
     </>
   );

@@ -105,6 +105,13 @@ export const StyledFakeInput = styled.div`
   padding: 0 0 0 10px;
   color: #edeced;
 
+  & span {
+    color: #ed955f;
+    margin-right: auto;
+    padding-left: 3px;
+    font-weight: 600;
+  }
+
   /* Schermi grandi o ad alta risoluzione */
   @media all and (min-width: 1690px) {
     margin: auto;

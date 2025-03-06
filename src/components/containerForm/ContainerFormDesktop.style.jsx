@@ -10,15 +10,10 @@ import imageFoots from "../../assets/image/imageFoots.png";
 
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
-// /* Schermi grandi o ad alta risoluzione */
-// @media all and (max-width: 1690px) { ... }
-
-// /* Schermi Desktop o Portatili */
-// @media all and (min-width: 1280px) and (max-width: 1689px) { ... }
-
 export const StyledContainerFormDesktop = styled(ContainerFormDesktop)`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 export const StyledForm = styled.form`
@@ -32,6 +27,10 @@ export const StyledForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+
+  /* Schermi grandi o ad alta risoluzione */
+  @media all and (min-width: 2000px) {
+  }
 `;
 
 export const StyledRowOne = styled.div`

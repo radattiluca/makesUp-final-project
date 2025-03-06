@@ -20,6 +20,7 @@ export const fetchFootPrint = createAsyncThunk(
         }
       );
       console.log("dentro la chiamata: " + response.data.footprint);
+      console.log("dentro la chiamata: " + response.data.offset_prices[0]);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Errore nella richiesta");
@@ -45,11 +46,11 @@ const footPrintSlice = createSlice({
       .addCase(fetchFootPrint.fulfilled, (state, action) => {
         console.log(
           "Azione fulfilled, payload ricevuto:",
-          action.payload.offset_prices
+          action.payload.offset_prices[0].amount
         );
         state.statusFootPrint = "succeeded";
         state.footprint = action.payload.footprint; // Aggiorna solo il valore footprint
-        state.offset_prices = action.payload.offset_prices; // Salva prezzi offset
+        state.offset_prices = action.payload.offset_prices[0].amount; // Salva prezzi offset
         state.details_url = action.payload.details_url; // Salva il link per compensare
       })
       .addCase(fetchFootPrint.rejected, (state, action) => {
