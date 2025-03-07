@@ -17,6 +17,37 @@ export const StyledButtonToForm = styled(ButtonToForm)`
   /* Desktop or Laptop screens and  Large or high-resolution screens */
   @media all and (min-width: 1280px) {
     width: 300px;
+
+    &:hover {
+      animation: myAnim2 2s ease 0s 1 normal forwards;
+      @keyframes myAnim2 {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+
+        10%,
+        30%,
+        50%,
+        70% {
+          transform: translateX(-10px);
+        }
+
+        20%,
+        40%,
+        60% {
+          transform: translateX(10px);
+        }
+
+        80% {
+          transform: translateX(8px);
+        }
+
+        90% {
+          transform: translateX(-8px);
+        }
+      }
+    }
   }
 
   /* Tablet in landscape mode */
@@ -44,6 +75,20 @@ export const Button = styled.button`
   /* Large or high-resolution screens */
   @media all and (min-width: 1690px) {
     font-size: 23px;
+
+    &:hover {
+      animation: myAnimFont 4s infinite linear;
+      animation-delay: 300ms;
+
+      @keyframes myAnimFont {
+        from {
+          color: #b9aba3;
+        }
+        to {
+          color: #ed955f;
+        }
+      }
+    }
   }
 
   /* Desktop or Laptop screens */

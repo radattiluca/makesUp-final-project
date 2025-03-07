@@ -82,6 +82,7 @@ export const StyledFakeInput = styled.div`
   align-items: center;
   padding: 0 0 0 10px;
   color: #edeced;
+  cursor: default;
 
   & span {
     color: #ed955f;
@@ -94,6 +95,24 @@ export const StyledFakeInput = styled.div`
   @media all and (min-width: 1280px) {
     margin: auto;
     width: 220px;
+
+    &:hover {
+      background-color: rgb(43, 83, 83, 0.9);
+      animation: myAnim 2s ease 0s 1 normal forwards;
+      @keyframes myAnim {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
   }
 
   /* Tablet in vertical mode and in landscape mode */
@@ -145,6 +164,11 @@ export const StyledButtonForm = styled.button`
     text-align: left;
     font-size: 14px;
     margin-right: 20px;
+
+    &:hover {
+      background-color: rgb(43, 83, 83, 0.9);
+      scale: 1.01;
+    }
   }
 
   /* Tablet in vertical mode and in landscape mode */

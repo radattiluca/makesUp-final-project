@@ -73,6 +73,11 @@ export const StyledButtonForm = styled.button`
   text-align: left;
   cursor: pointer;
   z-index: 2;
+
+  &:hover {
+    background-color: rgb(43, 83, 83, 0.9);
+    scale: 1.01;
+  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
@@ -123,6 +128,7 @@ export const StyledContainaerCounter = styled.div`
   z-index: 2;
   flex-wrap: nowrap;
   padding: 0 5px 0 5px;
+  cursor: default;
 
   & span {
     padding: 0 15px 0 15px;
@@ -130,6 +136,7 @@ export const StyledContainaerCounter = styled.div`
     border-left: 1px solid rgb(237, 236, 237, 0.7);
   }
 `;
+
 export const StyledButtonCounter = styled.div`
   background-color: transparent;
   border: none;
@@ -142,6 +149,15 @@ export const StyledButtonCounter = styled.div`
   text-align: left;
   cursor: pointer;
   padding: 4px;
+
+  &:hover {
+    color: grey;
+  }
+
+  &:active {
+    scale: 2;
+    color: #6d8654;
+  }
 `;
 
 export const StyledLabelPassengers = styled.div`
