@@ -1,10 +1,11 @@
+//in this slice we retrieve the airport data from the file airports.JSON
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Funzione asincrona per recuperare i dati dal file locale JSON
 export const fetchAirports = createAsyncThunk(
   "airports/fetchAirports",
   async () => {
-    const response = await fetch("/data/json/airports.json"); // Percorso relativo al file JSON
+    const response = await fetch("/data/json/airports.json");
     if (!response.ok) {
       throw new Error("Errore nel recupero dei dati");
     }
@@ -16,7 +17,7 @@ const airportsSlice = createSlice({
   name: "airports",
   initialState: {
     listAirports: [],
-    statusAirports: "idle", // idle | loading | succeeded | failed
+    statusAirports: "idle",
     errorAirports: null,
   },
   reducers: {},

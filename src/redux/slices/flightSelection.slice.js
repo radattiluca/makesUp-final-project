@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//qui immagazziniamo i dati relativi alle selezioni dell'utente. viene inizializzato lo stato vuoto che poi si riempirà con i valori che verranno passati dai relativi Select
+//here we store the data related to your selections. is initialized the empty state that will then be filled with values that will be passed by its Select
 
 const initialState = {
   selectedOrigin: null,

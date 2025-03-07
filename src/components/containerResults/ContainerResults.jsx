@@ -5,12 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 //import slices
 import { fetchFootPrint } from "../../redux/slices/footPrintClientApi.slice";
-// import {
-//   setOrigin,
-//   setDestination,
-//   setClass,
-//   setAirplane,
-// } from "../../redux/slices/flightSelection.slice";
 
 //import styles
 import {
@@ -24,6 +18,7 @@ import {
   StyledFakeInput,
   StyledFakeLabel,
 } from "./ContainerResults.style";
+import { StyledParagraphLoading } from "../loading/Loading.style";
 
 function ContainerResults({ className, children }) {
   const count = useSelector((state) => state.counterPassengers.value);
@@ -45,11 +40,6 @@ function ContainerResults({ className, children }) {
     }
   }, [footprint]);
 
-  console.log("Fuori dall'useEffect: " + footprint);
-  console.log("Fuori dall'useEffect: " + offset_prices);
-  console.log("🛑 Stato fuori useEffect:", JSON.stringify(footprint, null, 2));
-
-  if (statusFootPrint === "loading") return <p>Caricamento...</p>; //da mettere lo stile
   if (statusFootPrint === "failed") return <p>{errorFootPrint}</p>;
 
   const co2PerPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
@@ -64,7 +54,6 @@ function ContainerResults({ className, children }) {
   return (
     <div className={className}>
       {children}
-
       <StyledContainerCo2>
         <h1>La tua impronta</h1>
         <StyledFakeLabel>Il tuo volo</StyledFakeLabel>

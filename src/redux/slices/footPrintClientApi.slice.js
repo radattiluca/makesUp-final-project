@@ -1,3 +1,5 @@
+//this slice is requested to the goClimate API
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -34,7 +36,7 @@ const footPrintSlice = createSlice({
     footprint: null,
     offset_prices: [],
     details_url: "",
-    statusFootPrint: "idle", // idle | loading | succeeded | failed
+    statusFootPrint: "idle",
     errorFootPrint: null,
   },
   reducers: {},
@@ -49,9 +51,9 @@ const footPrintSlice = createSlice({
           action.payload.offset_prices[0].amount
         );
         state.statusFootPrint = "succeeded";
-        state.footprint = action.payload.footprint; // Aggiorna solo il valore footprint
-        state.offset_prices = action.payload.offset_prices[0].amount; // Salva prezzi offset
-        state.details_url = action.payload.details_url; // Salva il link per compensare
+        state.footprint = action.payload.footprint;
+        state.offset_prices = action.payload.offset_prices[0].amount;
+        state.details_url = action.payload.details_url;
       })
       .addCase(fetchFootPrint.rejected, (state, action) => {
         state.statusFootPrint = "failed";

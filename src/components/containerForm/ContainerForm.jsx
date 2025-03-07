@@ -36,9 +36,7 @@ import {
   StyledButtonCounter,
   StyledLabelPassengers,
 } from "./ContainerForm.style";
-// import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
-
-// import goClimateApi from "../clientApi/ClientApi";
+import { StyledParagraphLoading } from "../loading/Loading.style";
 
 const classe = [
   { value: "economy", label: "Economy" },
@@ -136,8 +134,6 @@ function ContainerForm({ className, children }) {
     }
   }, [status, statusAirports, dispatchAirplanes, dispatchAirports]);
 
-  if (status === "loading" || statusAirports === "loading")
-    return <p>Caricamento...</p>; //da mettere lo stile
   if (status === "failed" || statusAirports === "failed")
     return <p>Errore: {error || errorAirports}</p>;
 

@@ -1,3 +1,5 @@
+//This slice manages the counter to select passengers
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const counterPassengersSlice = createSlice({
