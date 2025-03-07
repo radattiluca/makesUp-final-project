@@ -38,6 +38,9 @@ import {
 } from "./ContainerForm.style";
 import { StyledParagraphLoading } from "../loading/Loading.style";
 
+//import images
+import airplane from "../../assets/image/airplane.png";
+
 const classe = [
   { value: "economy", label: "Economy" },
   { value: "premium_economy", label: "Premium economy" },
@@ -134,9 +137,6 @@ function ContainerForm({ className, children }) {
     }
   }, [status, statusAirports, dispatchAirplanes, dispatchAirports]);
 
-  if (status === "failed" || statusAirports === "failed")
-    return <p>Errore: {error || errorAirports}</p>;
-
   function handleSubmit(e) {
     e.preventDefault();
     if (
@@ -160,88 +160,94 @@ function ContainerForm({ className, children }) {
   return (
     <div className={className}>
       {children}
-      <StyledForm>
-        <StyledContainerImageBg></StyledContainerImageBg>
-        <StyledRowOne>
-          <StyledLabel htmlFor="origin">Partenza</StyledLabel>
-          <StyledInput
-            options={listAirports.map((airport) => ({
-              value: airport.code,
-              label: `${airport.city} - ${airport.name} -  ${airport.state}`,
-            }))}
-            placeholder="..."
-            value={selectedOrigin}
-            onChange={(option) => dispatchFootPrint(setOrigin(option))}
-            id="origin"
-            styles={customStylesInput}
-          />
-          <StyledLabel htmlFor="destination">Destinazione</StyledLabel>
-          <StyledInput
-            options={listAirports.map((airport) => ({
-              value: airport.code,
-              label: `${airport.city} - ${airport.name} -  ${airport.state}`,
-            }))}
-            placeholder="..."
-            value={selectedDestination}
-            onChange={(option) => dispatchFootPrint(setDestination(option))}
-            id="destination"
-            styles={customStylesInput}
-          />
+      {status === "succeeded" && statusAirports === "succeeded" ? (
+        <StyledForm>
+          <StyledContainerImageBg></StyledContainerImageBg>
+          <StyledRowOne>
+            <StyledLabel htmlFor="origin">Partenza</StyledLabel>
+            <StyledInput
+              options={listAirports.map((airport) => ({
+                value: airport.code,
+                label: `${airport.city} - ${airport.name} -  ${airport.state}`,
+              }))}
+              placeholder="..."
+              value={selectedOrigin}
+              onChange={(option) => dispatchFootPrint(setOrigin(option))}
+              id="origin"
+              styles={customStylesInput}
+            />
+            <StyledLabel htmlFor="destination">Destinazione</StyledLabel>
+            <StyledInput
+              options={listAirports.map((airport) => ({
+                value: airport.code,
+                label: `${airport.city} - ${airport.name} -  ${airport.state}`,
+              }))}
+              placeholder="..."
+              value={selectedDestination}
+              onChange={(option) => dispatchFootPrint(setDestination(option))}
+              id="destination"
+              styles={customStylesInput}
+            />
 
-          <StyledLabelPassengers>
-            <p>Passeggeri</p>
-          </StyledLabelPassengers>
+            <StyledLabelPassengers>
+              <p>Passeggeri</p>
+            </StyledLabelPassengers>
 
-          <StyledContainaerCounter>
-            <StyledButtonCounter
-              aria-label="Decrement value"
-              onClick={() => dispatch(decrement())}
-            >
-              −
-            </StyledButtonCounter>
-            <span>{count}</span>
+            <StyledContainaerCounter>
+              <StyledButtonCounter
+                aria-label="Decrement value"
+                onClick={() => dispatch(decrement())}
+              >
+                −
+              </StyledButtonCounter>
+              <span>{count}</span>
 
-            <StyledButtonCounter
-              aria-label="Increment value"
-              onClick={() => dispatch(increment())}
-            >
-              +
-            </StyledButtonCounter>
-          </StyledContainaerCounter>
-        </StyledRowOne>
-        <StyledRowTwo>
-          <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
-          <StyledInput
-            options={list.map((airplanes) => ({
-              value: airplanes.seating,
-              label: `${airplanes.model}`,
-            }))}
-            placeholder="..."
-            value={selectedAirplane}
-            onChange={(option) => dispatchFootPrint(setAirplane(option))}
-            id="airplane"
-            styles={customStylesInput}
-          />
-          <StyledLabel htmlFor="class">Classe</StyledLabel>
-          <StyledInput
-            options={classe.map((classe) => ({
-              value: classe.value,
-              label: `${classe.label}`,
-            }))}
-            placeholder="..."
-            value={selectedClass}
-            onChange={(option) => dispatchFootPrint(setClass(option))}
-            id="class"
-            styles={customStylesInput}
-          />
-        </StyledRowTwo>
-        <StyledRowButton>
-          <StyledButtonForm onClick={handleSubmit}>
-            <span>Calcola la tua impronta</span>
-          </StyledButtonForm>
-          <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
-        </StyledRowButton>
-      </StyledForm>
+              <StyledButtonCounter
+                aria-label="Increment value"
+                onClick={() => dispatch(increment())}
+              >
+                +
+              </StyledButtonCounter>
+            </StyledContainaerCounter>
+          </StyledRowOne>
+          <StyledRowTwo>
+            <StyledLabel htmlFor="airplane">Aereo</StyledLabel>
+            <StyledInput
+              options={list.map((airplanes) => ({
+                value: airplanes.seating,
+                label: `${airplanes.model}`,
+              }))}
+              placeholder="..."
+              value={selectedAirplane}
+              onChange={(option) => dispatchFootPrint(setAirplane(option))}
+              id="airplane"
+              styles={customStylesInput}
+            />
+            <StyledLabel htmlFor="class">Classe</StyledLabel>
+            <StyledInput
+              options={classe.map((classe) => ({
+                value: classe.value,
+                label: `${classe.label}`,
+              }))}
+              placeholder="..."
+              value={selectedClass}
+              onChange={(option) => dispatchFootPrint(setClass(option))}
+              id="class"
+              styles={customStylesInput}
+            />
+          </StyledRowTwo>
+          <StyledRowButton>
+            <StyledButtonForm onClick={handleSubmit}>
+              <span>Calcola la tua impronta</span>
+            </StyledButtonForm>
+            <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
+          </StyledRowButton>
+        </StyledForm>
+      ) : (
+        <StyledParagraphLoading>
+          <img src={airplane} alt="airplane" />
+        </StyledParagraphLoading>
+      )}
     </div>
   );
 }

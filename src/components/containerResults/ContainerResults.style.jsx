@@ -94,7 +94,6 @@ export const StyledFakeInput = styled.div`
   @media all and (min-width: 1280px) {
     margin: auto;
     width: 220px;
-    justify-content: center;
   }
 
   /* Tablet in vertical mode and in landscape mode */

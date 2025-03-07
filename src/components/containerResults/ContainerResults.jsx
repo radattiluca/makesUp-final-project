@@ -20,6 +20,9 @@ import {
 } from "./ContainerResults.style";
 import { StyledParagraphLoading } from "../loading/Loading.style";
 
+//import images
+import airplane from "../../assets/image/airplane.png";
+
 function ContainerResults({ className, children }) {
   const count = useSelector((state) => state.counterPassengers.value);
   const { selectedAirplane } = useSelector((state) => state.flightSelection);
@@ -36,11 +39,8 @@ function ContainerResults({ className, children }) {
   useEffect(() => {
     if (statusFootPrint === "idle") {
       dispatchFootPrint(fetchFootPrint());
-      console.log("nell'useEffect: " + footprint);
     }
   }, [footprint]);
-
-  if (statusFootPrint === "failed") return <p>{errorFootPrint}</p>;
 
   const co2PerPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
   const value = selectedAirplane?.value;
@@ -54,35 +54,47 @@ function ContainerResults({ className, children }) {
   return (
     <div className={className}>
       {children}
-      <StyledContainerCo2>
-        <h1>La tua impronta</h1>
-        <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
-        <StyledFakeInput>
-          {co2PerPerson}t di Co2 = <span>{price}€</span>
-          <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
-        </StyledFakeInput>
-        <StyledFakeLabel>L'intero volo</StyledFakeLabel>
-        <StyledFakeInput>
-          {totalCo2}t di Co2
-          <StyledContainerDoublePrintImage></StyledContainerDoublePrintImage>
-        </StyledFakeInput>
-      </StyledContainerCo2>
+      {footprint && offset_prices && details_url ? (
+        <>
+          <StyledContainerCo2>
+            <h1>La tua impronta</h1>
+            <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
+            <StyledFakeInput>
+              {co2PerPerson}t di Co2 = <span>{price}€</span>
+              <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
+            </StyledFakeInput>
+            <StyledFakeLabel>L'intero volo</StyledFakeLabel>
+            <StyledFakeInput>
+              {totalCo2}t di Co2
+              <StyledContainerDoublePrintImage></StyledContainerDoublePrintImage>
+            </StyledFakeInput>
+          </StyledContainerCo2>
 
-      <StyledRowButton>
-        <StyledButtonForm>
-          <a href={urlTreedom} target="_blank" rel="noopener noreferrer">
-            <span>Compensa su Treedom</span>
-          </a>
-        </StyledButtonForm>
-        <StyledContainerTreedom></StyledContainerTreedom>
+          <StyledRowButton>
+            <StyledButtonForm>
+              <a href={urlTreedom} target="_blank" rel="noopener noreferrer">
+                <span>Compensa su Treedom</span>
+              </a>
+            </StyledButtonForm>
+            <StyledContainerTreedom></StyledContainerTreedom>
 
-        <StyledButtonForm>
-          <a href={urlCompensation} target="_blank" rel="noopener noreferrer">
-            <span>Compensa su GoClimate</span>
-          </a>
-        </StyledButtonForm>
-        <StyledContainerGoClimate></StyledContainerGoClimate>
-      </StyledRowButton>
+            <StyledButtonForm>
+              <a
+                href={urlCompensation}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Compensa su GoClimate</span>
+              </a>
+            </StyledButtonForm>
+            <StyledContainerGoClimate></StyledContainerGoClimate>
+          </StyledRowButton>
+        </>
+      ) : (
+        <StyledParagraphLoading>
+          <img src={airplane} alt="airplane" />
+        </StyledParagraphLoading>
+      )}
     </div>
   );
 }
