@@ -30,15 +30,13 @@ import {
   StyledRowButton,
   StyledButtonForm,
   StyledContainerImageBg,
-  StyledContainerFootPrintImage,
-  StyledContainerDoublePrintImage,
   StyledContainaerCounter,
   StyledButtonCounter,
   StyledLabelPassengers,
 } from "./ContainerFormDesktop.style";
-// import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
-// import goClimateApi from "../clientApi/ClientApi";
+//import image
+import imageFoot from "../../assets/image/imageFoot.png";
 
 const classe = [
   { value: "economy", label: "Economy" },
@@ -242,8 +240,8 @@ function ContainerForm({ className, children }) {
         <StyledRowButton>
           <StyledButtonForm onClick={handleSubmit}>
             <span>Calcola la tua impronta</span>
+            <img src={imageFoot} alt="logo footprint" />
           </StyledButtonForm>
-          <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
         </StyledRowButton>
       </StyledForm>
     </div>

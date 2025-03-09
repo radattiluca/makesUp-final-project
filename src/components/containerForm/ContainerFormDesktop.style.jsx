@@ -5,8 +5,6 @@ import ContainerFormDesktop from "./ContainerFormDesktop";
 
 //import img
 import bgForm from "../../assets/image/bg-image-form.png";
-import imageFoot from "../../assets/image/imageFoot.png";
-import imageFoots from "../../assets/image/imageFoots.png";
 
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
@@ -47,6 +45,13 @@ export const StyledRowButton = styled.div`
   justify-content: center;
   margin-top: 20px;
   grid-column: 1/3;
+
+  img {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-left: 10px;
+  }
 `;
 
 export const StyledInput = styled(Select)`
@@ -76,32 +81,32 @@ export const StyledButtonForm = styled.button`
 
   &:hover {
     background-color: rgb(43, 83, 83, 0.9);
-    scale: 1.01;
+    scale: 1.05;
   }
 `;
 
-export const StyledContainerFootPrintImage = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-image: url("${imageFoot}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: 26px;
-  right: 300px;
-  z-index: 2;
-`;
+// export const StyledContainerFootPrintImage = styled.div`
+//   position: absolute;
+//   width: 20px;
+//   height: 20px;
+//   background-image: url("${imageFoot}");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   bottom: 26px;
+//   right: 300px;
+//   z-index: 2;
+// `;
 
-export const StyledContainerDoublePrintImage = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-image: url("${imageFoots}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: 24px;
-  right: 50px;
-`;
+// export const StyledContainerDoublePrintImage = styled.div`
+//   position: absolute;
+//   width: 20px;
+//   height: 20px;
+//   background-image: url("${imageFoots}");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   bottom: 24px;
+//   right: 50px;
+// `;
 
 export const StyledContainerImageBg = styled.div`
   position: absolute;

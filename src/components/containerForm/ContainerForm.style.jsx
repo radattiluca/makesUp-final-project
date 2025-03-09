@@ -4,7 +4,7 @@ import Select from "react-select";
 import ContainerForm from "./ContainerForm";
 
 //import img
-import bgformMobile from "../../assets/image/Calcola la tua impronta.png";
+import bgformMobile from "../../assets/image/bg-image-form-mobile.png";
 import imageFoot from "../../assets/image/imageFoot.png";
 import imageFoots from "../../assets/image/imageFoots.png";
 

@@ -13,8 +13,6 @@ import {
   StyledContainerCo2,
   StyledContainerFootPrintImage,
   StyledContainerDoublePrintImage,
-  StyledContainerTreedom,
-  StyledContainerGoClimate,
   StyledFakeInput,
   StyledFakeLabel,
 } from "./ContainerResults.style";
@@ -22,6 +20,8 @@ import { StyledParagraphLoading } from "../loading/Loading.style";
 
 //import images
 import airplane from "../../assets/image/airplane.png";
+import treedom from "../../assets/image/Treedom.png";
+import goClimate from "../../assets/image/goClimate_logo.png";
 
 function ContainerResults({ className, children }) {
   const count = useSelector((state) => state.counterPassengers.value);
@@ -74,9 +74,9 @@ function ContainerResults({ className, children }) {
             <StyledButtonForm>
               <a href={urlTreedom} target="_blank" rel="noopener noreferrer">
                 <span>Compensa su Treedom</span>
+                <img src={treedom} alt="Logo Treedom" />
               </a>
             </StyledButtonForm>
-            <StyledContainerTreedom></StyledContainerTreedom>
 
             <StyledButtonForm>
               <a
@@ -85,9 +85,9 @@ function ContainerResults({ className, children }) {
                 rel="noopener noreferrer"
               >
                 <span>Compensa su GoClimate</span>
+                <img src={goClimate} alt="Logo goClimate" />
               </a>
             </StyledButtonForm>
-            <StyledContainerGoClimate></StyledContainerGoClimate>
           </StyledRowButton>
         </>
       ) : (

@@ -5,12 +5,8 @@ import Select from "react-select";
 import ContainerResults from "./ContainerResults";
 
 //import img
-import bgForm from "../../assets/image/desktop-bg-image.jpg";
-import bgformMobile from "../../assets/image/Calcola la tua impronta.png";
 import imageFoot from "../../assets/image/imageFoot.png";
 import imageFoots from "../../assets/image/imageFoots.png";
-import treedom from "../../assets/image/Treedom.png";
-import goClimate from "../../assets/image/goClimate_logo.png";
 
 export const StyledContainerResults = styled(ContainerResults)`
   display: flex;
@@ -58,6 +54,13 @@ export const StyledRowButton = styled.div`
   margin-bottom: 40px;
   border-radius: 12px;
   position: relative;
+
+  img {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-left: 10px;
+  }
 
   /* Desktop or Laptop screens and  Large or high-resolution screens */
   @media all and (min-width: 1280px) {
@@ -140,7 +143,7 @@ export const StyledFakeLabel = styled.div`
 `;
 
 export const StyledButtonForm = styled.button`
-  width: 180px;
+  width: 190px;
   background-color: #2b5353;
   border: none;
   border-radius: 20px;
@@ -167,13 +170,13 @@ export const StyledButtonForm = styled.button`
 
     &:hover {
       background-color: rgb(43, 83, 83, 0.9);
-      scale: 1.01;
+      scale: 1.05;
     }
   }
 
   /* Tablet in vertical mode and in landscape mode */
   @media all and (min-width: 481px) and (max-width: 1279px) {
-    width: 208px;
+    width: 215px;
     text-align: left;
     font-size: 14px;
   }
@@ -204,51 +207,5 @@ export const StyledContainerDoublePrintImage = styled.div`
   /* Desktop or Laptop screens and Large or high-resolution screens  */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
     margin-left: auto;
-  }
-`;
-
-export const StyledContainerTreedom = styled.div`
-  width: 20px;
-  height: 20px;
-  background-image: url("${treedom}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  right: 70px;
-  top: 18px;
-
-  /* Desktop or Laptop screens and Large or high-resolution screens */
-  @media all and (min-width: 1280px) {
-    left: 350px;
-    top: 18px;
-  }
-
-  /* Tablet in vertical mode and in landscape mode */
-  @media all and (min-width: 481px) and (max-width: 1279px) {
-    right: 105px;
-    top: 18px;
-  }
-`;
-
-export const StyledContainerGoClimate = styled.div`
-  width: 15px;
-  height: 15px;
-  background-image: url("${goClimate}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  right: 70px;
-  bottom: 21px;
-
-  /* Desktop or Laptop screens and Large or high-resolution screens */
-  @media all and (min-width: 1280px) {
-    right: 200px;
-    bottom: 22px;
-  }
-
-  /* Tablet in vertical mode and in landscape mode */
-  @media all and (min-width: 481px) and (max-width: 1279px) {
-    right: 105px;
-    bottom: 22px;
   }
 `;
