@@ -1,4 +1,4 @@
-# Offset ✈️
+# Offset
 
 ![Senzanome]()
 
