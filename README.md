@@ -16,8 +16,6 @@
 
 Offset è una web app che permette di calcolare l'impronta ecologica di un viaggio aereo in base alla distanza percorsa e ad altri fattori ambientali. L'app fornisce stime sulle emissioni di CO₂ e suggerisce alternative per ridurre l'impatto ambientale.
 
-[🔝 Torna su](#offset)
-
 ## Caratteristiche Principali
 
 - Calcolo delle emissioni di CO₂ basato su dati aggiornati
@@ -62,3 +60,5 @@ Al sequente link potete trovare e provare l'applicazione -->
 ## Contribuire
 
 Sono benvenuti suggerimenti e contributi! Sentiti libero di aprire una issue o di inviare una pull request.
+
+[🔝 Torna su](#offset)
