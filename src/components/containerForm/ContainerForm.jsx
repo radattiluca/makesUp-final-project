@@ -225,7 +225,6 @@ function ContainerForm({ className, children }) {
               value={selectedAirplane}
               onChange={(option) => dispatchFootPrint(setAirplane(option))}
               id="airplane"
-              readonly={true}
               searchable={false}
             />
             <StyledLabel htmlFor="class">Classe</StyledLabel>
