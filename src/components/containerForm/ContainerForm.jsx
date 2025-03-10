@@ -62,6 +62,10 @@ const customStylesInput = {
       boxShadow: "none",
     },
   }),
+  input: (provider) => ({
+    ...provider,
+    color: "#edeced",
+  }),
   dropdownIndicator: (provider, state) => ({
     ...provider,
     color: state.isFocused ? "#6d8654" : "#edeced",

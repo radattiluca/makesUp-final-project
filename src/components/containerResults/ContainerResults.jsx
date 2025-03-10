@@ -42,10 +42,10 @@ function ContainerResults({ className, children }) {
     }
   }, [footprint]);
 
-  const co2PerPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
+  const co2ForPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
   const value = selectedAirplane?.value;
   const loadFactory = Math.round(value * 0.8);
-  const co2ForPassengers = `${co2PerPerson * Number(loadFactory)}`;
+  const co2ForPassengers = `${co2ForPerson * Number(loadFactory)}`;
   const totalCo2 = Number(co2ForPassengers).toFixed(2);
   const price = Number((offset_prices / 100) * count);
   const urlCompensation = details_url || "N/A";
@@ -60,7 +60,7 @@ function ContainerResults({ className, children }) {
             <h1>La tua impronta</h1>
             <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
             <StyledFakeInput>
-              {co2PerPerson}t di Co2 = <span>{price}€</span>
+              {co2ForPerson}t di Co2 = <span>{price}€</span>
               <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
             </StyledFakeInput>
             <StyledFakeLabel>L'intero volo</StyledFakeLabel>
