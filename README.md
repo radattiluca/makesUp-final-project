@@ -55,7 +55,7 @@ Offset è una web app che permette di calcolare l'impronta ecologica di un viagg
 
 ## Applicazione
 
-Al sequente link potete trovare e provare l'applicazione --> offset-footprint-calculator.netlify.app
+Al sequente link potete trovare e provare l'applicazione --> [Offset](offset-footprint-calculator.netlify.app)
 
 ## Contribuire
 
