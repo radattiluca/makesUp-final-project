@@ -6,7 +6,6 @@ import ContainerForm from "./ContainerForm";
 //import img
 import bgformMobile from "../../assets/image/bg-image-form-mobile.png";
 import imageFoot from "../../assets/image/imageFoot.png";
-import imageFoots from "../../assets/image/imageFoots.png";
 
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 
@@ -99,17 +98,6 @@ export const StyledContainerFootPrintImage = styled.div`
   @media all and (min-width: 481px) and (max-width: 1279px) {
     right: 120px;
   }
-`;
-
-export const StyledContainerDoublePrintImage = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-image: url("${imageFoots}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: 24px;
-  right: 50px;
 `;
 
 export const StyledContainerImageBg = styled.div`
