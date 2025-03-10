@@ -8,9 +8,6 @@ export const StyledNavbar = styled(Navbar)`
   background-color: rgb(43, 83, 83, 0.8);
   display: flex;
   flex-direction: column;
-  /* position: sticky;
-  top: 0;
-  z-index: 300; */
 `;
 
 export const NavbarInnerContainer = styled.div`

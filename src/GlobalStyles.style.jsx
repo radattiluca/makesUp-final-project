@@ -1,9 +1,3 @@
-// bg-navbar #2b5353
-//color-foot #b9aba3
-// color-text #edeced
-// color-text-label #6d8654
-// color-price #ed955f;
-
 import { createGlobalStyle } from "styled-components";
 
 //import bg-image
