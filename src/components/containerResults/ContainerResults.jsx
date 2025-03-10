@@ -28,13 +28,8 @@ function ContainerResults({ className, children }) {
   const { selectedAirplane } = useSelector((state) => state.flightSelection);
 
   const dispatchFootPrint = useDispatch();
-  const {
-    footprint,
-    offset_prices,
-    details_url,
-    statusFootPrint,
-    errorFootPrint,
-  } = useSelector((state) => state.footprint);
+  const { footprint, offset_prices, details_url, statusFootPrint } =
+    useSelector((state) => state.footprint);
 
   useEffect(() => {
     if (statusFootPrint === "idle") {
@@ -42,12 +37,13 @@ function ContainerResults({ className, children }) {
     }
   }, [footprint]);
 
-  const co2PerPerson = Number((footprint / 1000) * count).toFixed(2) || "N/A";
+  const co2ForPerson = Number(((footprint / 1000) * count).toFixed(2)); //converts kg to tonnes and multiplies by passengers entered
   const value = selectedAirplane?.value;
-  const loadFactory = Math.round(value * 0.8);
-  const co2ForPassengers = `${co2PerPerson * Number(loadFactory)}`;
-  const totalCo2 = Number(co2ForPassengers).toFixed(2);
-  const price = Number((offset_prices / 100) * count);
+  const loadFactory = Math.round(value * 0.8); //simulates total seats occupied in the flight
+  const totalCo2 = (Number(footprint / 1000) * Number(loadFactory)).toFixed(2); //multiplies the co2 of the flight by the total passengers
+  // const price = Number((offset_prices / 100) * count); //Returns the price with comma
+  console.log(offset_prices);
+  const price = Number(((offset_prices / 100) * count).toFixed(2));
   const urlCompensation = details_url || "N/A";
   const urlTreedom = "https://www.treedom.net/it/plant-a-tree";
 
@@ -60,7 +56,7 @@ function ContainerResults({ className, children }) {
             <h1>La tua impronta</h1>
             <StyledFakeLabel>Il tuo volo</StyledFakeLabel>
             <StyledFakeInput>
-              {co2PerPerson}t di Co2 = <span>{price}€</span>
+              {co2ForPerson}t di Co2 = <span>{price}€</span>
               <StyledContainerFootPrintImage></StyledContainerFootPrintImage>
             </StyledFakeInput>
             <StyledFakeLabel>L'intero volo</StyledFakeLabel>

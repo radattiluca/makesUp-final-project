@@ -75,7 +75,7 @@ export const StyledButtonForm = styled.button`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   z-index: 2;
 `;
@@ -139,7 +139,13 @@ export const StyledContainaerCounter = styled.div`
     border-right: 1px solid rgb(237, 236, 237, 0.7);
     border-left: 1px solid rgb(237, 236, 237, 0.7);
   }
+
+  /* Tablet in vertical mode and in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
+    width: 105px;
+  }
 `;
+
 export const StyledButtonCounter = styled.div`
   background-color: transparent;
   border: none;
