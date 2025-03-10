@@ -31,7 +31,6 @@ import {
   StyledButtonForm,
   StyledContainerImageBg,
   StyledContainerFootPrintImage,
-  StyledContainerDoublePrintImage,
   StyledContainaerCounter,
   StyledButtonCounter,
   StyledLabelPassengers,
@@ -114,7 +113,6 @@ const customStylesInput = {
 };
 
 function ContainerForm({ className, children }) {
-  // andiamo a prendere gli stati con useSelector e utilizziamo dispatch per fare le azioni
   const [changeText, setChangeText] = useState(false);
   const count = useSelector((state) => state.counterPassengers.value);
   const dispatch = useDispatch();

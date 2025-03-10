@@ -75,7 +75,7 @@ export const StyledButtonForm = styled.button`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   z-index: 2;
 `;

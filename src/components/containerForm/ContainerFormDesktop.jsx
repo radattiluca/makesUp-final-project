@@ -21,7 +21,6 @@ import {
 
 //import styles
 import {
-  StyledContainerFormDesktop,
   StyledForm,
   StyledInput,
   StyledRowOne,
@@ -111,7 +110,6 @@ const customStylesInput = {
 };
 
 function ContainerForm({ className, children }) {
-  // andiamo a prendere gli stati con useSelector e utilizziamo dispatch per fare le azioni
   const [changeText, setChangeText] = useState(false);
   const count = useSelector((state) => state.counterPassengers.value);
   const dispatch = useDispatch();

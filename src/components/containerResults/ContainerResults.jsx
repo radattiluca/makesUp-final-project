@@ -28,13 +28,8 @@ function ContainerResults({ className, children }) {
   const { selectedAirplane } = useSelector((state) => state.flightSelection);
 
   const dispatchFootPrint = useDispatch();
-  const {
-    footprint,
-    offset_prices,
-    details_url,
-    statusFootPrint,
-    errorFootPrint,
-  } = useSelector((state) => state.footprint);
+  const { footprint, offset_prices, details_url, statusFootPrint } =
+    useSelector((state) => state.footprint);
 
   useEffect(() => {
     if (statusFootPrint === "idle") {

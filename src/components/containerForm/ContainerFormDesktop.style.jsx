@@ -75,7 +75,7 @@ export const StyledButtonForm = styled.button`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   z-index: 2;
 
@@ -84,29 +84,6 @@ export const StyledButtonForm = styled.button`
     scale: 1.05;
   }
 `;
-
-// export const StyledContainerFootPrintImage = styled.div`
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   background-image: url("${imageFoot}");
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   bottom: 26px;
-//   right: 300px;
-//   z-index: 2;
-// `;
-
-// export const StyledContainerDoublePrintImage = styled.div`
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   background-image: url("${imageFoots}");
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   bottom: 24px;
-//   right: 50px;
-// `;
 
 export const StyledContainerImageBg = styled.div`
   position: absolute;
@@ -151,7 +128,7 @@ export const StyledButtonCounter = styled.div`
   font-family: Open Sans, sans-serif;
   font-weight: 800;
   font-size: 12px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   padding: 4px;
 
