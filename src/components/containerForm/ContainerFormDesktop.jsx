@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 
 //import redux
@@ -112,6 +112,7 @@ const customStylesInput = {
 
 function ContainerForm({ className, children }) {
   // andiamo a prendere gli stati con useSelector e utilizziamo dispatch per fare le azioni
+  const [changeText, setChangeText] = useState(false);
   const count = useSelector((state) => state.counterPassengers.value);
   const dispatch = useDispatch();
 
@@ -158,6 +159,7 @@ function ContainerForm({ className, children }) {
           cabinClass: selectedClass?.value,
         })
       );
+      setChangeText(true);
     } else {
       alert("Inserire tutti i dati prima di proseguire");
     }
@@ -243,7 +245,9 @@ function ContainerForm({ className, children }) {
         </StyledRowTwo>
         <StyledRowButton>
           <StyledButtonForm onClick={handleSubmit}>
-            <span>Calcola la tua impronta</span>
+            <span>
+              {changeText ? "Aggiorna dati" : "Calcola la tua impronta"}
+            </span>
             <img src={imageFoot} alt="logo footprint" />
           </StyledButtonForm>
         </StyledRowButton>

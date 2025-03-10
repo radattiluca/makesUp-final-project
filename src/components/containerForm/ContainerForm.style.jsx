@@ -139,7 +139,13 @@ export const StyledContainaerCounter = styled.div`
     border-right: 1px solid rgb(237, 236, 237, 0.7);
     border-left: 1px solid rgb(237, 236, 237, 0.7);
   }
+
+  /* Tablet in vertical mode and in landscape mode */
+  @media all and (min-width: 481px) and (max-width: 1279px) {
+    width: 105px;
+  }
 `;
+
 export const StyledButtonCounter = styled.div`
   background-color: transparent;
   border: none;
