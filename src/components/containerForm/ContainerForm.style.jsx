@@ -78,6 +78,10 @@ export const StyledButtonForm = styled.button`
   text-align: center;
   cursor: pointer;
   z-index: 2;
+
+  & span {
+    margin-right: 5px;
+  }
 `;
 
 export const StyledContainerFootPrintImage = styled.div`
