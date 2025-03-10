@@ -239,6 +239,7 @@ function ContainerForm({ className, children }) {
               onChange={(option) => dispatchFootPrint(setClass(option))}
               id="class"
               styles={customStylesInput}
+              isSearchable={false}
             />
           </StyledRowTwo>
           <StyledRowButton>
