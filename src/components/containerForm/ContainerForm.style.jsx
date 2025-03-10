@@ -80,7 +80,7 @@ export const StyledButtonForm = styled.button`
   z-index: 2;
 
   & span {
-    margin-right: 5px;
+    margin-right: 10px;
   }
 `;
 

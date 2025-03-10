@@ -128,9 +128,9 @@ export const ContainerTitle = styled.div`
   margin: auto;
   margin-bottom: 30px;
   background-color: rgb(237, 149, 95, 0.8);
-  position: sticky;
+  /* position: sticky;
   top: 79px;
-  z-index: 300;
+  z-index: 300; */
 
   & h1 {
     font-size: 0.8em;

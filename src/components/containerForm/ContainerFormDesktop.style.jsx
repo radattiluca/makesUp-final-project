@@ -79,10 +79,6 @@ export const StyledButtonForm = styled.button`
   cursor: pointer;
   z-index: 2;
 
-  & span {
-    margin-right: 5px;
-  }
-
   &:hover {
     background-color: rgb(43, 83, 83, 0.9);
     scale: 1.05;
