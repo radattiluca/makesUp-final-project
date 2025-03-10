@@ -226,6 +226,7 @@ function ContainerForm({ className, children }) {
               onChange={(option) => dispatchFootPrint(setAirplane(option))}
               id="airplane"
               styles={customStylesInput}
+              readonly
             />
             <StyledLabel htmlFor="class">Classe</StyledLabel>
             <StyledInput
@@ -238,6 +239,7 @@ function ContainerForm({ className, children }) {
               onChange={(option) => dispatchFootPrint(setClass(option))}
               id="class"
               styles={customStylesInput}
+              readonly
             />
           </StyledRowTwo>
           <StyledRowButton>
