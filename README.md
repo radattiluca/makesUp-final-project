@@ -1,6 +1,6 @@
 # Offset
 
-![Senzanome]()
+![Senzanome](https://github.com/radattiluca/offset-final-project/blob/development/src/assets/image/image-OG-offset.png?raw=true)
 
 # Sommario
 
