@@ -44,7 +44,6 @@ const classe = [
   { value: "first", label: "First" },
 ];
 
-//questo ci serve per lo stile di react-select
 const customStylesInput = {
   control: (provider, state) => ({
     ...provider,

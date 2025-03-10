@@ -47,7 +47,6 @@ const classe = [
   { value: "first", label: "First" },
 ];
 
-//questo ci serve per lo stile di react-select
 const customStylesInput = {
   control: (provider, state) => ({
     ...provider,
@@ -118,10 +117,10 @@ function ContainerForm({ className, children }) {
   const dispatch = useDispatch();
 
   const dispatchAirplanes = useDispatch();
-  const { list, status, error } = useSelector((state) => state.airplanes);
+  const { list, status } = useSelector((state) => state.airplanes);
 
   const dispatchAirports = useDispatch();
-  const { listAirports, statusAirports, errorAirports } = useSelector(
+  const { listAirports, statusAirports } = useSelector(
     (state) => state.airports
   );
 
