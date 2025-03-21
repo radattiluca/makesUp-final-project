@@ -9,15 +9,14 @@ export const StyledInfoHome = styled(InfoHome)`
 `;
 
 export const StyledContainerInfo = styled.div`
-  width: 300px;
+  width: 90%;
   background-color: rgb(237, 236, 237, 0.9);
-  border-radius: 12px;
+  border-radius: 5px;
   margin: auto;
   margin-top: 10px;
   z-index: 3;
-  height: 350px;
+  height: 60vh;
   overflow: scroll;
-  padding: 20px;
 
   & h3 {
     color: #98887f; // #b9aba3 25% darker
@@ -27,11 +26,16 @@ export const StyledContainerInfo = styled.div`
 
   & span {
     color: #ed955f;
+    font-weight: bold;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   /* Large or high-resolution screens */
   @media all and (min-width: 1690px) {
-    width: 1000px;
+    width: 50%;
     height: 100%;
     overflow: visible;
 
@@ -42,21 +46,21 @@ export const StyledContainerInfo = styled.div`
 
   /* Desktop or Laptop screens */
   @media all and (min-width: 1280px) and (max-width: 1689px) {
-    width: 900px;
+    width: 90%;
     height: 100%;
     overflow: visible;
   }
 
   /* Tablet in landscape mode */
   @media all and (min-width: 737px) and (max-width: 1279px) {
-    width: 500px;
+    width: 90%;
     height: 100%;
     overflow: visible;
   }
 
   /* Tablet in vertical mode */
   @media all and (min-width: 481px) and (max-width: 736px) {
-    width: 400px;
+    width: 90%;
     height: 100%;
     overflow: visible;
   }
@@ -126,9 +130,9 @@ export const StyledContainerArrow = styled.div`
 export const ContainerTitle = styled.div`
   width: 100%;
   margin: auto;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   background-color: rgb(237, 149, 95, 0.8);
- 
+
   & h1 {
     font-size: 0.8em;
     text-align: center;
