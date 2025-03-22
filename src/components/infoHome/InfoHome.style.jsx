@@ -10,16 +10,16 @@ export const StyledInfoHome = styled(InfoHome)`
 
 export const StyledContainerInfo = styled.div`
   width: 90%;
-  background-color: rgb(237, 236, 237, 0.9);
+  /* background-color: rgb(237, 236, 237, 0.9); */
   border-radius: 5px;
   margin: auto;
   margin-top: 10px;
   z-index: 3;
-  height: 60vh;
-  overflow: scroll;
+  /* height: 60vh;
+  overflow: scroll; */
 
   & h3 {
-    color: #98887f; // #b9aba3 25% darker
+    color: #796d66;
     text-align: center;
     margin-bottom: 30px;
   }
@@ -72,6 +72,7 @@ export const StyledParagraphInfo = styled.p`
   line-height: 1.5;
   color: #263f3f;
   font-size: 1em;
+  font-weight: 600;
   padding-bottom: 20px;
   text-align: center;
 
@@ -110,19 +111,19 @@ export const StyledContainerArrow = styled.div`
 
   @keyframes ArrowUpDown {
     0% {
-      top: 0px;
+      top: -20px;
     }
     25% {
-      top: 0px;
+      top: -20px;
     }
     50% {
-      top: 28px;
+      top: 0px;
     }
     75% {
-      top: 28px;
+      top: 0px;
     }
     100% {
-      top: 0px;
+      top: -20px;
     }
   }
 `;

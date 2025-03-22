@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 //import styles
 import { GlobalStyles } from "../../GlobalStyles.style";
-import { StyledAppContainer } from "./App.style";
+import { StyledAppContainer, StyledContainerHome } from "./App.style";
 import { StyledNavbar } from "../navbar/Navbar.style.jsx";
 import { StyledButtonToForm } from "../buttonToForm/ButtonToForm.style";
 import { StyledContainerButtonToForm } from "../containerButtonToForm/Container.style";
@@ -44,12 +44,12 @@ function App() {
           </>
         )}
         {!isClicked && (
-          <>
+          <StyledContainerHome>
             <StyledInfoHome></StyledInfoHome>
             <StyledContainerButtonToForm>
               <StyledButtonToForm></StyledButtonToForm>
             </StyledContainerButtonToForm>
-          </>
+          </StyledContainerHome>
         )}
       </StyledAppContainer>
     </>
